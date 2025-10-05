@@ -1,0 +1,211 @@
+/* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
+/* .......Simple Pink....................... */
+/* --- 👍 designed by https://github.com/Krautt  👍 --- */
+@import url("file:///home/kkleytt/.cache/wal/colors-waybar.css");
+
+
+* {
+	font-family: "JetBrainsMono Nerd Font";
+	font-weight: bold;
+	min-height: 0;	
+	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
+	font-size: 102%;
+	font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+}
+
+window#waybar {
+	background: @background;
+	/*background: black;*/
+	border-radius: 50px;
+	/*color: whitesmoke;*/
+	color: @background;
+}
+
+window#waybar.hidden {
+	opacity: 0.5;
+}
+
+tooltip {
+	/*background: #1e1e2e;*/
+	background: @background;
+	border-radius: 10px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: @background;
+	color: pink;
+}
+
+/*-----module groups----*/
+.modules-left,
+.modules-right {
+	border: 5px solid;
+	border-radius: 50px 50px 50px 50px;
+	background-color: @color5;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-right: 4px;
+	padding-left: 4px;
+}
+
+.modules-center {
+	background-color: @background;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-right: 4px;
+	padding-left: 4px;
+}
+
+#taskbar button,
+#workspaces button {
+    color: @color5;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 15px;
+    padding-left: 4px;
+    padding-right: 8px;
+}
+
+#taskbar button.active,
+#workspaces button.active {
+    color: @background;
+    background-color: @color5;
+    border-radius: 30px;
+    padding-left: 6px;
+    padding-right: 12px;
+}
+
+#workspaces button.focused {
+    /*color: #c42a60;*/
+}
+
+#workspaces button.urgent {
+    /*color: #11111b;*/
+    border-radius: 15px;
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+    color: @foreground;
+    background-color: @background;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 30px;
+    padding-left: 4px;
+    padding-right: 8px;
+}
+
+#backlight,
+#backlight-slider,
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#disk,
+#idle_inhibitor,
+#keyboard-state,
+#memory,
+#mode,
+#mpris,
+#network,
+#power-profiles-daemon,
+#pulseaudio,
+#pulseaudio-slider,
+#taskbar button,
+#taskbar,
+#temperature,
+#tray,
+#window,
+#wireplumber,
+#workspaces,
+#custom-backlight,
+#custom-browser,
+#custom-cava_mviz,
+#custom-cycle_wall,
+#custom-dot_update,
+#custom-file_manager,
+#custom-keybinds,
+#custom-keyboard,
+#custom-light_dark,
+#custom-lock,
+#custom-hint,
+#custom-hypridle,
+#custom-menu,
+#custom-playerctl,
+#custom-power_vertical,
+#custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
+#custom-swaync,
+#custom-tty,
+#custom-updater,
+#custom-hyprpicker,
+#custom-weather,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.default, 
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.severe,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-weather.sunnyDay {
+	color: @background;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-right: 4px;
+	padding-left: 4px;
+
+}
+
+#temperature.critical {
+	background-color: #C90C0C;
+}
+
+@keyframes blink {
+	to {
+		color: @background;
+	}
+}
+
+/*-----Indicators----*/
+#custom-hypridle.notactive,
+#idle_inhibitor.activated {
+	color: @background;
+}
+
+#battery.critical:not(.charging) {
+	color: #C90C0C;
+	animation-name: blink;
+	animation-duration: 2.0s;
+	animation-timing-function: steps(20);
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    min-width: 0px;
+    min-height: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    min-width: 80px;
+    min-height: 5px;
+    border-radius: 5px;
+    background-color: @background;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    min-height: 10px;
+    border-radius: 5px;
+    background-color: @background;
+}

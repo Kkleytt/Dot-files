@@ -1,0 +1,50 @@
+//* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
+//* ............................................*/
+//* .............CHRYSANTHEMUM.......................*/
+//* ............................................*/
+//* --- 👍 designed by https://github.com/Krautt  👍 --- */
+
+{
+"include": [
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  "$HOME/.config/waybar/ModulesCustom",
+  "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
+  ],
+"layer": "top",
+"mode": "dock",
+"exclusive": true,
+"passthrough": false,
+"position": "top",
+"spacing": 4,
+"fixed-center": true,
+"ipc": true,
+"margin-left": 5,
+"margin-right": 5,
+"margin-top": 5,
+	
+"modules-left": [
+	"clock#5",
+	"custom/separator#line",
+	"network",
+	"custom/separator#dot-line",
+	"bluetooth",
+	"custom/wfrecord"
+	],
+  
+"modules-center": ["hyprland/workspaces"], 
+	
+"modules-right": [
+	"group/mobo_drawer",
+	"custom/separator#line",
+	"custom/keyboard",
+	"custom/separator#dot-line",
+	"pulseaudio#1",
+	"custom/separator#dot-line",
+	"backlight",
+	"custom/separator#line",
+	"battery"
+],
+   
+}
