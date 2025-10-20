@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # === Папка для скринов ===
-DIR="$HOME/Pictures/Screenshots"
+DIR="$HOME/Libraries/Pictures/Screenshots"
 mkdir -p "$DIR"
 STAMP="$(date +'%Y-%m-%d_%H-%M-%S').png"
 OUT="$DIR/$STAMP"

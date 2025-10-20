@@ -1,5 +1,5 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
+# /* ---- 💫 https://github.com/JaKooLit   💫 ---- */  ##
 # Script for Monitor backlights (if supported) using brightnessctl
 
 iDIR="$HOME/.config/swaync/icons"
@@ -7,10 +7,11 @@ notification_timeout=1000
 send_notify=false
 
 # Правила регулировки (Кол-во шагов регулировки)
-BRI_STEPS=20
+BRI_STEP_SIZE=5
 SEND_NOTIFY=false
-BRI_STEP_SIZE=$((100 / $BRI_STEPS))
 
+# Целевые уровни яркости для циклического переключения
+CYCLE_LEVELS=(0 25 50 75 100)
 
 # Отправка уведомлений
 send_notification() {
@@ -57,23 +58,20 @@ round_brightness() {
 # Функция изменения яркости
 change_brightness() {
     local direction="$1"
+    local step="$2"
     local current new icon
 
     current=$(get_brightness)
 
-    if (( current % BRI_STEP_SIZE == 0 )); then
+    if (( current % step == 0 )); then
         if [[ $direction == "up" ]]; then
-            new=$(( current + BRI_STEP_SIZE ))
+            new=$(( current + step ))
         else
-            new=$(( current - BRI_STEP_SIZE ))
+            new=$(( current - step ))
         fi
     else
         new=$( round_brightness "$current" "$direction" )
     fi
-
-
-
-    
 
     # Clamp between 5 and 100
     (( new < 5 )) && new=5
@@ -88,17 +86,56 @@ change_brightness() {
     fi
 }
 
+# Функция циклического переключения яркости
+cycle_brightness() {
+    local current=$(get_brightness)
+    local next_level=0
+    local found=false
+
+    # Проходим по массиву уровней
+    for level in "${CYCLE_LEVELS[@]}"; do
+        # Если текущая яркость меньше уровня, округляем вверх к этому уровню
+        if (( current < level )); then
+            next_level=$level
+            found=true
+            break
+        fi
+    done
+
+    # Если текущая яркость >= 100 или не найден следующий уровень, возвращаемся к 0%
+    if [ "$found" != "true" ]; then
+        next_level=0
+    fi
+
+    # Устанавливаем новую яркость
+    brightnessctl set "${next_level}%"
+
+    # Отправляем уведомление
+    icon=$(get_icon_path "$next_level")
+    if [ $send_notify == "true" ]; then
+        send_notification "$next_level" "$icon"
+    fi
+}
 
 # Main
+if [ -z "$2" ]; then
+    step=BRI_STEP_SIZE
+else
+    step="$2"
+fi
+
 case "$1" in
     "--get")
         get_brightness
         ;;
     "--inc")
-        change_brightness "up"
+        change_brightness "up" "$step"
         ;;
     "--dec")
-        change_brightness "down"
+        change_brightness "down" "$step"
+        ;;
+    "--cycle")
+        cycle_brightness
         ;;
     *)
         get_brightness

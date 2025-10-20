@@ -1,36 +1,38 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# For Searching via web browsers
+# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  
+# Поиск через веб-браузер с помощью Rofi
 
-# Define the path to the config file
-config_file=$HOME/.config/hypr/UserConfigs/01-UserDefaults.conf
+# Путь к конфигу (временно не используется, но можно расширить)
+config_file="$HOME/.config/hypr/UserConfigs/01-UserDefaults.conf"
 
-# Check if the config file exists
-if [[ ! -f "$config_file" ]]; then
-    echo "Error: Configuration file not found!"
-    exit 1
-fi
-
-# Process the config file in memory, removing the $ and fixing spaces
-config_content=$(sed 's/\$//g' "$config_file" | sed 's/ = /=/')
-
-# Source the modified content directly from the variable
-eval "$config_content"
-
-# Check if $term is set correctly
-if [[ -z "$Search_Engine" ]]; then
-    echo "Error: \$Search_Engine is not set in the configuration file!"
-    exit 1
-fi
-
-# Rofi theme and message
+# Тема Rofi и сообщение
 rofi_theme="$HOME/.config/rofi/config-search.rasi"
-msg='‼️ **note** ‼️ search via default web browser'
+msg="🔎 Введите поисковый запрос"
 
-# Kill Rofi if already running before execution
-if pgrep -x "rofi" >/dev/null; then
+# Убиваем предыдущий экземпляр rofi
+if pgrep -x "rofi" > /dev/null; then
     pkill rofi
 fi
 
-# Open Rofi and pass the selected query to xdg-open for Google search
-rofi -dmenu -config "$rofi_theme" | xargs -I{} xdg-open $Search_Engine
+# Показываем поле ввода (mode: combi или text)
+query=$(rofi -dmenu \
+    -p "Поиск" \
+    -theme "$rofi_theme" \
+    -no-fixed-num-lines 
+)
+
+# Если пользователь ввёл запрос — выполняем поиск
+if [[ -n "$query" ]]; then
+    # Кодируем запрос для URL (заменяем пробелы на + и т.д.)
+    encoded_query=$(printf '%s' "$query" | jq -sRr @uri)
+    
+    # Формируем URL (Google по умолчанию)
+    url="https://www.google.com/search?q=$encoded_query"
+    
+    # Открываем в стандартном браузере
+    xdg-open "$url" &> /dev/null || {
+        notify-send "🌐 Ошибка" "Не удалось открыть браузер."
+    }
+else
+    exit 0
+fi

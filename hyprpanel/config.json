@@ -80,8 +80,8 @@
   "bar.volume.label": true,
   "bar.network.showWifiInfo": false,
   "bar.network.label": false,
-  "bar.volume.scrollUp": "hyprpanel vol -5",
-  "bar.volume.scrollDown": "hyprpanel vol +5",
+  "bar.volume.scrollUp": "exec $HOME/.config/hypr/scripts/Volume.sh --dec  2",
+  "bar.volume.scrollDown": "exec $HOME/.config/hypr/scripts/Volume.sh --inc 2",
   "bar.bluetooth.label": false,
   "bar.battery.hideLabelWhenFull": false,
   "bar.clock.format": "%H:%M",
@@ -165,7 +165,7 @@
   "bar.customModules.hypridle.offLabel": "",
   "bar.customModules.hypridle.label": true,
   "theme.bar.buttons.modules.hypridle.spacing": "0.05em",
-  "bar.battery.scrollUp": "exec $HOME/.config/hypr/scripts/Brightness.sh --dec",
+  "bar.battery.scrollUp": "exec $HOME/.config/hypr/scripts/Brightness.sh --dec 2",
   "menus.power.showLabel": true,
   "theme.matugen_settings.mode": "dark",
   "menus.dashboard.controls.enabled": true,
@@ -175,7 +175,7 @@
   "menus.dashboard.powermenu.avatar.image": "/home/kkleytt/.face.icon",
   "bar.windowtitle.custom_title": true,
   "bar.network.truncation_size": 7,
-  "bar.battery.scrollDown": "exec $HOME/.config/hypr/scripts/Brightness.sh --inc",
+  "bar.battery.scrollDown": "exec $HOME/.config/hypr/scripts/Brightness.sh --inc 2",
   "theme.bar.enableShadow": false,
   "theme.bar.shadowMargins": "0px 0px 0px 0px",
   "theme.bar.buttons.y_margins": "0.2em",
@@ -222,5 +222,8 @@
   "menus.dashboard.shortcuts.left.shortcut3.command": "gnome-calculator",
   "menus.dashboard.shortcuts.left.shortcut4.command": "io.github.diegopvlk.Dosage",
   "menus.dashboard.shortcuts.left.shortcut4.tooltip": "Dosage",
-  "bar.clock.rightClick": "menu:calendar"
+  "bar.clock.rightClick": "menu:calendar",
+  "bar.volume.middleClick": "",
+  "bar.volume.rightClick": "exec $HOME/.config/hypr/scripts/Volume.sh --toggle",
+  "bar.battery.rightClick": "$HOME/.config/hypr/scripts/Brightness.sh --cycle"
 }
