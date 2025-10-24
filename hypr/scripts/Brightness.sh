@@ -4,13 +4,8 @@
 
 iDIR="$HOME/.config/swaync/icons"
 notification_timeout=1000
-send_notify=false
-
-# Правила регулировки (Кол-во шагов регулировки)
+send_notify=true
 BRI_STEP_SIZE=5
-SEND_NOTIFY=false
-
-# Целевые уровни яркости для циклического переключения
 CYCLE_LEVELS=(0 25 50 75 100)
 
 # Отправка уведомлений
@@ -18,12 +13,14 @@ send_notification() {
     local brightness=$1
     local icon_path=$2
 
-    notify-send -e \
-        -h string:x-canonical-private-synchronous:brightness_notif \
-        -h int:value:"$brightness" \
-        -u low \
-        -i "$icon_path" \
-        "Screen" "Brightness: ${brightness}%"
+    if [ $send_notify == "true" ]; then
+        notify-send -e \
+            -h string:x-canonical-private-synchronous:brightness_notif \
+            -h int:value:"$brightness" \
+            -u low \
+            -i "$icon_path" \
+            "Screen" "Brightness: ${brightness}%"
+    fi
 }
 
 # Получение значения яркости
@@ -45,13 +42,14 @@ get_icon_path() {
 round_brightness() {
     local brightness=$1
     local direction=$2 # "up" или "down"
+    local step=$3
 
     if [[ "$direction" == "up" ]]; then
         # Округление вверх до кратного STEP_SIZE
-        echo $(( ((brightness + BRI_STEP_SIZE - 1) / BRI_STEP_SIZE) * BRI_STEP_SIZE ))
+        echo $(( ((brightness + step - 1) / step) * step ))
     else
         # Округление вниз до кратного STEP_SIZE
-        echo $(( (brightness / BRI_STEP_SIZE) * BRI_STEP_SIZE ))
+        echo $(( (brightness / step) * step ))
     fi
 }
 
@@ -70,20 +68,24 @@ change_brightness() {
             new=$(( current - step ))
         fi
     else
-        new=$( round_brightness "$current" "$direction" )
+        new=$( round_brightness "$current" "$direction" "$step")
     fi
 
-    # Clamp between 5 and 100
-    (( new < 5 )) && new=5
-    (( new > 100 )) && new=100
+    delta=$(( new - current ))
+    if (( delta > 0 )); then
+        rel="+${delta}%"
+    elif (( delta < 0 )); then
+        rel="${delta#-}%-"
+    else
+        rel="+0%"
+    fi
 
-    brightnessctl set "${new}%"
+    # apply relative change
+    brightnessctl set "$rel"
 
     icon=$(get_icon_path "$new")
 
-    if [ $send_notify == "true" ]; then
-        send_notification "$new" "$icon"
-    fi
+    send_notification "$new" "$icon"
 }
 
 # Функция циклического переключения яркости
@@ -112,9 +114,7 @@ cycle_brightness() {
 
     # Отправляем уведомление
     icon=$(get_icon_path "$next_level")
-    if [ $send_notify == "true" ]; then
-        send_notification "$next_level" "$icon"
-    fi
+    send_notification "$next_level" "$icon"
 }
 
 # Main
