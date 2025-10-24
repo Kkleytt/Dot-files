@@ -27,11 +27,6 @@ wheel_scroll_min_lines 1
 enable_audio_bell no
 
 window_padding_width 4
-# selection_foreground none
-# selection_background none
 
-
-# BEGIN_KITTY_THEME
-# Noctalia
-include current-theme.conf
-# END_KITTY_THEME
+selection_foreground none
+selection_background none
