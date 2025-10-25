@@ -10,7 +10,7 @@ sDIR="$HOME/.config/hypr/scripts"
 VOL_STEP_SIZE=5
 VOL_LIMIT=200
 MIC_STEP_SIZE=5
-SEND_NOTIFY=true
+SEND_NOTIFY=false
 SEND_NOTIFY_CHANGE=false
 
 
