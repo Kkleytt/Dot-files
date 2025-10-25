@@ -2,22 +2,6 @@
 
 set -euo pipefail
 
-# Цвета и стили
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-YELLOW='\033[1;33m'
-BOLD='\033[1m'
-RESET='\033[0m'
-
-# Эмодзи (опционально, можно убрать для совместимости)
-WIFI_ICON="📶"
-BT_ICON="uetooth"
-ALL_ICON="🔌"
-HELP_ICON="❓"
-OK_ICON="✅"
-ERR_ICON="❌"
-
 show_help() {
     cat <<EOF
 
@@ -84,7 +68,7 @@ main() {
 
     if [ "$device" = "invalid" ]; then
         log err "Неизвестное устройство: '$device_raw'"
-        log info "Допустимые: wifi, wlan, bluetooth, bt, all"
+        log info "Допустимые: wifi, bluetooth, bt, all"
         exit 1
     fi
 
