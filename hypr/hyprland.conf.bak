@@ -1,0 +1,26 @@
+exec-once = $HOME/.config/hypr/initial-boot.sh  # Запуск инициализации системы (Boot разделы)
+
+# Директория с конфигами
+$configs = $HOME/.config/hypr/configs           # Директория стандартных конфигов
+$UserConfigs = $HOME/.config/hypr/UserConfigs   # Директория пользовательских конфигов
+
+
+# Подключение модулей
+source= $UserConfigs/01-UserDefaults.conf       # Настройки стандартных переменных
+source= $UserConfigs/Startup_Apps.conf          # Запуск приложений при старте системы
+source=$configs/Keybinds.conf                   # Настройки базовых сочетаний клавиш
+source= $UserConfigs/ENVariables.conf           # Переменные для настройки системы
+source = $UserConfigs/Peripherals.conf          # Настройки периферии (Мышки, Клавиатуры, Динамики, Микрофоны и тд)
+source= $UserConfigs/Laptops.conf               # Настройки для ноутбука
+# source = $UserConfigs/Desktop.conf            # Настройки для домашнего ПК
+# source = $UserConfigs/Server.conf             # Настройки для сервера
+source= $UserConfigs/WindowRules.conf           # Правила поведения окон и рабочих столов
+source= $UserConfigs/UserDecorations.conf       # Визуальный вид системы
+source= $UserConfigs/UserAnimations.conf        # Правила анимации системы
+source= $UserConfigs/UserKeybinds.conf          # Пользовательские сочетания клавиш
+source= $UserConfigs/UserSettings.conf          # Пользовательские настройки системы
+source= $UserConfigs/DesktopRules.conf          # Настройки расположения окон
+
+# Настройка дисплеев
+source= $HOME/.config/hypr/monitors.conf
+source= $HOME/.config/hypr/workspaces.conf
