@@ -2,31 +2,26 @@
 set -euo pipefail
 
 # === Папка для скринов ===
-DIR="$HOME/Libraries/Pictures/Screenshots"
+DIR="$HOME/Pictures/Screenshots"
 mkdir -p "$DIR"
 STAMP="$(date +'%Y-%m-%d_%H-%M-%S').png"
 OUT="$DIR/$STAMP"
 
-# === Уведомления (замена notify-wrap на notify-send) ===
-collapse() { echo ""; }
+# === Уведомления ===
 note() { notify-send "$1" "$2"; }
 
 # === Аргументы ===
 MODE="${1:-screen}"       # screen | window | area
-EDIT="${2:-no_edit}"      # edit | no_edit
-
-# === 0. Снятие уведомлений ===
-collapse
-sleep 0.6
+EDIT="${2:-edit}"         # edit | no_edit
 
 # === Функция скриншота ===
 take_screenshot() {
   case "$MODE" in
     screen)
       if command -v grimblast &>/dev/null; then
-        grimblast save screen $OUT
+        grimblast save screen "$OUT"
       else
-        grim $OUT
+        grim "$OUT"
       fi
       ;;
     window)
@@ -50,19 +45,39 @@ take_screenshot() {
 # === 1. Делаем скриншот ===
 take_screenshot
 
-# === 2. Редактирование ===
+# === 2. Редактирование с защитой от пустого файла ===
 if [[ "$EDIT" == "edit" ]]; then
+  # Создаём временный файл
   tmpfile="$(mktemp --suffix=.png)"
-  satty -f "$OUT" -o "$tmpfile"
-  mv "$tmpfile" "$OUT"
+
+  # Запускаем satty
+  if satty -f "$OUT" -o "$tmpfile"; then
+    # Проверяем, существует ли файл и не пустой ли он
+    if [[ -s "$tmpfile" ]]; then
+      mv "$tmpfile" "$OUT"
+    else
+      # satty создал пустой файл → оставляем оригинал
+      rm -f "$tmpfile"
+      note "Редактирование отменено" "Сохранён оригинальный скриншот"
+    fi
+  else
+    # satty завершился с ошибкой → оставляем оригинал
+    rm -f "$tmpfile"
+    note "Редактирование не удалось" "Сохранён оригинальный скриншот"
+  fi
 fi
 
 # === 3. Буфер обмена ===
-wl-copy < "$OUT"
-
+if [[ -s "$OUT" ]]; then
+  wl-copy < "$OUT"
+else
+  # На всякий случай — если что-то пошло не так
+  note "Ошибка" "Скриншот пустой или не создан"
+  exit 1
+fi
 
 # === 4. Уведомление ===
 note "Скриншот сохранён" "$STAMP"
 
 # === 5. Путь в stdout ===
-echo $OUT
+echo "$OUT"

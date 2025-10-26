@@ -160,13 +160,13 @@
       "workspaces": false,
       "volume": false
     },
-    "showOnHover": true,
+    "showOnHover": false,
     "status": {
       "showAudio": true,
       "showBattery": true,
       "showBluetooth": true,
       "showKbLayout": true,
-      "showMicrophone": false,
+      "showMicrophone": true,
       "showNetwork": true,
       "showLockStatus": false
     },
@@ -178,20 +178,15 @@
     },
     "workspaces": {
       "activeIndicator": true,
-      "activeLabel": "󰮯",
+      "activeLabel": "",
       "activeTrail": false,
-      "label": "  ",
+      "label": "󰮿",
       "occupiedBg": false,
-      "occupiedLabel": "󰮯",
+      "occupiedLabel": "󱙝",
       "perMonitorWorkspaces": true,
       "showWindows": false,
-      "shown": 10,
-      "specialWorkspaceIcons": [
-        {
-          "name": "steam",
-          "icon": "sports_esports"
-        }
-      ]
+      "shown": 12,
+      "specialWorkspaceIcons": []
     }
   },
   "border": {
@@ -452,7 +447,7 @@
       "nowPlaying": false
     },
     "vpn": {
-      "enabled": false,
+      "enabled": true,
       "provider": [
         {
           "name": "wireguard",
