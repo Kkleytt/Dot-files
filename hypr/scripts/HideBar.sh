@@ -15,10 +15,10 @@ check_hyprpanel() {
 };
 
 check_caelestia() {
-    local mode="$1"
+    local shadow="$1"
     local config_file="$HOME/.config/caelestia/shell.json"
 
-    if [[ "$mode" == "shadow" ]]; then
+    if [[ "$shadow" == "1" ]]; then
         # Toggle "persistent" in config.json only
         if [[ -f "$config_file" ]]; then
             # Ensure jq is available
@@ -44,33 +44,29 @@ check_caelestia() {
             echo "Config file not found: $config_file" >&2
         fi
         return 0
-    elif [[ "$mode" == "reload" ]]; then
-        echo "Reloading Caelestia shell ..."
+    fi
+
+    # Normal toggle: launch or kill
+    if pgrep -f "quickshell-wrapped" >/dev/null; then
         caelestia-shell kill
-        sleep 2
-        caelestia-shell -d
-    elif [[ "$mode" == "off" ]]; then
-        echo "Killing Caelestia shell ..."
-        caelestia-shell kill
-    elif [[ "$mode" == "on" ]]; then
-        echo "Starting Caelestia shell ..."
-        caelestia-shell -d
     else
-        echo "Unknown method. Usage: $0 {reload|off|on|shadow}" >&2
+        caelestia-shell
     fi
 }
     
 
+
+
 bar="$1"
-mode="$2"
+shadow="$2"
 
 if [ "$bar" = "waybar" ]; then
-    check_waybar "$mode"
+    check_waybar
 elif [ "$bar" = "hyprpanel" ]; then
-    check_hyprpanel "$mode"
+    check_hyprpanel
 elif [ "$bar" == "caelestia" ]; then
-    check_caelestia "$mode"
+    check_caelestia "$shadow"
 else
-    echo "Usage: $0 {waybar|hyprpanel|caelestia} {reload|off|on|shadow}" >&2
+    echo "Usage: $0 {waybar|hyprpanel|caelestia} & $1 {1|0}" >&2
     exit 1
 fi

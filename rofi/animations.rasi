@@ -1,0 +1,61 @@
+@import "~/.config/rofi/config.rasi" 
+mainbox {
+  children:                           [ "inputbar", "listview"];
+}
+
+window {
+  width: 30%;
+  border-radius: 1em 1em 0em 0em;
+  height: inherit;
+}
+
+/* ---- Entry ---- */
+inputbar {
+  enabled:                      true;
+  padding:                      1em;
+  background-color:             transparent;
+  background-image:             url("~/.config/rofi/.current_wallpaper", width);
+  border-radius:                1em;
+}
+textbox-prompt-colon {
+    enabled:                    false;
+}
+entry {
+  placeholder: "Select animation";
+  horizontal-align: 0.5;
+}
+
+/* ---- Listview ---- */
+listview {
+  columns: 1;
+  lines: 8;
+  cycle: true;
+}
+
+/* ---- Elements ---- */
+element-text selected,
+element {
+  orientation: horizontal;
+  border-radius: 0px;
+  padding: 0.2em 0.2em 0.2em 1em;
+}
+
+element selected.normal {
+  border-radius: 0.4em;
+  border: 2px;
+  border-color: @selected-normal-background;
+}
+
+element-icon {
+  size: 0%;
+}
+
+element-text {
+  horizontal-align: 0.0;
+  vertical-align: 0.0;
+  padding: 0px;
+  margin: 0px;
+}
+element-text selected.normal {
+  background-color: transparent;
+}

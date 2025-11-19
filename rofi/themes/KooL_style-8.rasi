@@ -1,7 +1,3 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* KooL Hyprland Rofi Style 8 */
-
-
 /* ---- Configuration ---- */
 configuration {
     modi:                       "drun,filebrowser,window,run";
@@ -14,7 +10,24 @@ configuration {
     window-format:              "{w} · {c} · {t}";
     hover-select:               true;
     me-select-entry:            "MouseSecondary";
-    me-accept-entry:            "MousePrimary";    
+    me-accept-entry:            "MousePrimary";   
+
+    kb-mode-complete: "";
+    kb-move-char-back: "";
+    kb-move-char-forward: "";
+    kb-row-up: "Control+k,Up";
+    kb-row-down: "Control+j,Down";
+    kb-row-left: "Control+h,Left";
+    kb-row-right: "Control+l,Right";
+    kb-accept-entry: "Return,KP_Enter";
+    kb-remove-to-eol: ""; 
+    kb-remove-char-back: "BackSpace,Shift+BackSpace";
+    click-to-exit: true;
+
+    font:           "JetBrainsMono Nerd Font SemiBold 12";
+    location:       6;
+    y-offset:       0px;   
+    x-offset:       0px;    
 }
 
 /* ---- Load wallust colors ---- */
@@ -29,59 +42,68 @@ configuration {
 
 /* ---- Window ---- */
 window {
-    width:                       50%;
-    transparency:                "real";
-    fullscreen:                  false;
-    enabled:                     true;
-    cursor:                      "default";
-    spacing:                     0em;
-    padding:                     0em;
-    border:                      @border-width;
-    border-color:                @active-background;
-    border-radius:               @border-radius;
-    background-color:            @background-color;
+    width:                      50%;
+    transparency:               "real";
+    fullscreen:                 false;
+    enabled:                    true;
+    cursor:                     "default";
+    spacing:                    0em;
+    padding:                    0em;
+    border:                     @border-width;
+    border-color:               @active-background;
+    border-radius:              2em 2em 0em 0em;
+    background-color:           @background-color;
+    height:                     inherit;
 }
 
 mainbox {
-    enabled:                     true;
-    spacing:                     0em;
-    padding:                     0em;
-    orientation:                 vertical;
-    children:                    [ "inputbar" , "mode-switcher", "message", "listbox" ];
-    background-color:            transparent;
+    enabled:                    true;
+    spacing:                    0em;
+    padding:                    0em;
+    orientation:                vertical;
+    children:                   [ "inputbar" , "mode-switcher", "message", "listbox" ];
+    background-color:           transparent;
+    border-radius:              0em;
 }
 
 
 /* ---- Inputbar ---- */
 inputbar {
-    enabled:                     true;
-    spacing:                     0em;
-    padding:                     4em;
-    children:                    [ "textbox-prompt-colon", "entry" ];
-    background-color:            transparent;
-    background-image:            url("~/.config/rofi/.current_wallpaper", width);
+    enabled:                    true;
+    spacing:                    0em;
+    padding:                    1em;
+    children:                   [ "textbox-prompt-colon", "entry" ];
+    background-color:           transparent;
+    background-image:           url("~/.config/rofi/.current_wallpaper", width);
+    border-radius:              1.5em;
 }
 
 textbox-prompt-colon {
-    enabled:                     false;
-    expand:                      false;
-    str:                         "";
-    padding:                     1em 0.2em 0em 0em;
-    text-color:                  @foreground;
-    border-radius:               2em 0em 0em 2em;
-    background-color:            @background;
+    enabled:                    true;
+    expand:                     false;
+    padding:                    15px 25px 17px 19px;
+    spacing:                    0px;
+    border:                     0px;
+    border-radius:              2em;
+    background-color:           @background;
+    text-color:                 @urgent-background;
+    str:                        "";
 }
 
 entry {
-    enabled:                     true;
-    border-radius:               2em 2em 2em 2em;
-    spacing:                     1em;
-    padding:                     1em;
-    background-color:            @background;
-    text-color:                  @foreground;
-    cursor:                      text;
-    placeholder:                 "Search";
-    placeholder-color:           inherit;
+    enabled:                    true;
+    font:                       "JetBrainsMono Nerd Font SemiBold 15";
+    width:                      10%;
+    border-radius:              2em;
+    spacing:                    0em;
+    padding:                    0.6em;
+    background-color:           @background;
+    text-color:                 @foreground;
+    cursor:                     bold;
+    placeholder:                "Search";
+    placeholder-color:          inherit;
+    horizontal-align: 0.4;
+    cursor-color: @background;
 }
 
 /* ---- Listbox ---- */
@@ -102,11 +124,11 @@ listview {
     lines:                       4;
     cycle:                       true;
     dynamic:                     true;
-    scrollbar:                   true;
+    scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
+    fixed-height:                false;
+    fixed-columns:               false;
     cursor:                      "default";
     background-color:            transparent;
 }
@@ -148,7 +170,7 @@ scrollbar {
 element {
     enabled:                     true;
     spacing:                     0em;
-    padding:                     0.8em;
+    padding:                     0.5em;
     cursor:                      pointer;
     background-color:            transparent;
     text-color:                  @foreground;

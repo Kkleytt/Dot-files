@@ -2,7 +2,7 @@
   "appearance": {
     "anim": {
       "durations": {
-        "scale": 1
+        "scale": 0.6
       }
     },
     "font": {
@@ -23,11 +23,11 @@
       "scale": 1
     },
     "spacing": {
-      "scale": 0.5
+      "scale": 1.2
     },
     "transparency": {
-      "enabled": true,
-      "base": 0.99,
+      "enabled": false,
+      "base": 0.5,
       "layers": 0.3
     }
   },
@@ -50,21 +50,18 @@
       "warnLevels": [
         {
           "level": 20,
-          "title": "Low battery - 20%",
-          "message": "You might want to plug in a charger",
-          "icon": "battery_android_frame_2"
+          "title": "Батарея разряжается - 20%",
+          "message": "Стоит поддерживать заряд аккумулятор не ниже 20%"
         },
         {
           "level": 10,
-          "title": "LOW BATTERY - 10%",
-          "message": "You should probably plug in a charger <b>now</b>",
-          "icon": "battery_android_frame_1"
+          "title": "Низкий заряд батареи - 10%",
+          "message": "Подключите зарядное устройство"
         },
         {
           "level": 5,
-          "title": "Critical battery level - 5%",
-          "message": "PLUG THE CHARGER RIGHT NOW!!",
-          "icon": "battery_android_alert",
+          "title": "Критически низкий заряд батареи - 5%",
+          "message": "Немедленно подключите зарядное устройство",
           "critical": true
         }
       ],
@@ -113,12 +110,12 @@
     "dragThreshold": 10,
     "entries": [
       {
-        "id": "clock",
-        "enabled": true
-      },
-      {
         "id": "logo",
         "enabled": false
+      },
+      {
+        "id": "clock",
+        "enabled": true
       },
       {
         "id": "workspaces",
@@ -126,7 +123,7 @@
       },
       {
         "id": "spacer",
-        "enabled": true
+        "enabled": false
       },
       {
         "id": "activeWindow",
@@ -138,7 +135,7 @@
       },
       {
         "id": "tray",
-        "enabled": false
+        "enabled": true
       },
       {
         "id": "statusIcons",
@@ -146,19 +143,19 @@
       },
       {
         "id": "power",
-        "enabled": true
+        "enabled": false
       }
     ],
     "persistent": true,
     "popouts": {
       "activeWindow": false,
       "statusIcons": true,
-      "tray": false
+      "tray": true
     },
     "scrollActions": {
-      "brightness": false,
-      "workspaces": false,
-      "volume": false
+      "volume": true,
+      "brightness": true,
+      "workspaces": true
     },
     "showOnHover": false,
     "status": {
@@ -166,32 +163,33 @@
       "showBattery": true,
       "showBluetooth": true,
       "showKbLayout": true,
-      "showMicrophone": true,
+      "showMicrophone": false,
       "showNetwork": true,
       "showLockStatus": false
     },
     "tray": {
       "background": false,
-      "compact": false,
+      "compact": true,
       "iconSubs": [],
-      "recolour": false
+      "recolour": true
     },
     "workspaces": {
       "activeIndicator": true,
       "activeLabel": "",
-      "activeTrail": false,
+      "activeTrail": true,
       "label": "󰮿",
       "occupiedBg": false,
-      "occupiedLabel": "󱙝",
+      "occupiedLabel": "󰯈",
       "perMonitorWorkspaces": true,
       "showWindows": false,
       "shown": 12,
       "specialWorkspaceIcons": []
-    }
+    },
+    "persistentshowOnHover": true
   },
   "border": {
-    "rounding": 20,
-    "thickness": 6
+    "rounding": 24,
+    "thickness": 4
   },
   "dashboard": {
     "enabled": true,
@@ -267,7 +265,7 @@
           "-r"
         ],
         "enabled": true,
-        "dangerous": false
+        "dangerous": true
       },
       {
         "name": "Light",
@@ -310,7 +308,7 @@
           "systemctl",
           "reboot"
         ],
-        "enabled": true,
+        "enabled": false,
         "dangerous": false
       },
       {
@@ -333,7 +331,7 @@
           "loginctl",
           "lock-session"
         ],
-        "enabled": true,
+        "enabled": false,
         "dangerous": false
       },
       {
@@ -350,15 +348,15 @@
     ],
     "dragThreshold": 50,
     "vimKeybinds": false,
-    "enableDangerousActions": false,
-    "maxShown": 7,
-    "maxWallpapers": 9,
+    "enableDangerousActions": true,
+    "maxShown": 5,
+    "maxWallpapers": 5,
     "specialPrefix": "@",
     "useFuzzy": {
-      "apps": false,
-      "actions": false,
-      "schemes": false,
-      "variants": false,
+      "apps": true,
+      "actions": true,
+      "schemes": true,
+      "variants": true,
       "wallpapers": true
     },
     "showOnHover": false,
@@ -371,8 +369,8 @@
     "actionOnClick": true,
     "clearThreshold": 0.3,
     "defaultExpireTimeout": 2000,
-    "expandThreshold": 20,
-    "expire": false
+    "expandThreshold": 10,
+    "expire": true
   },
   "osd": {
     "enabled": true,
@@ -381,12 +379,12 @@
     "hideDelay": 1000
   },
   "paths": {
-    "mediaGif": "root:/assets/bongocat.gif",
-    "sessionGif": "root:/assets/kurukuru.gif",
+    "mediaGif": "~/.config/caelestia/gifs/fantom.gif",
+    "sessionGif": "~/.config/caelestia/gifs/clippy.gif",
     "wallpaperDir": "~/Pictures/Wallpapers"
   },
   "services": {
-    "audioIncrement": 0.2,
+    "audioIncrement": 0.05,
     "maxVolume": 2.0,
     "defaultPlayer": "Mozzila",
     "gpuType": "",
@@ -428,26 +426,26 @@
   },
   "sidebar": {
     "dragThreshold": 80,
-    "enabled": false
+    "enabled": true
   },
   "utilities": {
-    "enabled": true,
+    "enabled": false,
     "maxToasts": 4,
     "toasts": {
-      "audioInputChanged": true,
-      "audioOutputChanged": true,
+      "audioInputChanged": false,
+      "audioOutputChanged": false,
       "capsLockChanged": false,
-      "chargingChanged": true,
+      "chargingChanged": false,
       "configLoaded": false,
-      "dndChanged": true,
-      "gameModeChanged": true,
+      "dndChanged": false,
+      "gameModeChanged": false,
       "kbLayoutChanged": false,
       "numLockChanged": false,
-      "vpnChanged": true,
+      "vpnChanged": false,
       "nowPlaying": false
     },
     "vpn": {
-      "enabled": true,
+      "enabled": false,
       "provider": [
         {
           "name": "wireguard",

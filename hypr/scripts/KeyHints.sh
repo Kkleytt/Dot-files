@@ -3,7 +3,6 @@
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 KEYHINTS_DIR="$SCRIPT_DIR/keyhints"
-rofi_theme="~/.config/rofi/config-emoji.rasi"
 
 if [[ ! -d "$KEYHINTS_DIR" ]]; then
   echo "Ошибка: $KEYHINTS_DIR не найдена!" >&2
@@ -25,10 +24,10 @@ for f in "${THEME_FILES[@]}"; do
 done
 
 # Убиваем старые процессы
-pkill -f "rofi.*cheatsheet\|yad.*Keyhints" 2>/dev/null
+pkill -f "rofi.*cheatsheet\|yad.*KooL Cheat" 2>/dev/null
 
 # Выбор темы через Rofi (иконка уже в строке!)
-CHOSEN_DISPLAY=$(printf '%s\n' "${THEMES[@]}" | rofi -dmenu -i -config "$rofi_theme" )
+CHOSEN_DISPLAY=$(printf '%s\n' "${THEMES[@]}" | rofi -dmenu -i )
 
 # Если ничего не выбрано — выходим
 [[ -z "$CHOSEN_DISPLAY" ]] && exit 0
@@ -62,7 +61,7 @@ done < "$HINT_FILE"
 # Показываем в yad
 GDK_BACKEND=wayland yad \
   --center \
-  --title="Keyhints" \
+  --title="KooL Quick Cheat Sheet" \
   --no-buttons \
   --list \
   --column=Комбинация: \
