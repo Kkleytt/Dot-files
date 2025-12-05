@@ -1,3 +1,5 @@
+# GENERATE by NixOS config
+
 # Настройки стилей системы
 kvantum_theme="catppuccin-mocha-blue"
 color_scheme="prefer-dark"

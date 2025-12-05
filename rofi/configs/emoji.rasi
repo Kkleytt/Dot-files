@@ -1,0 +1,38 @@
+@import "~/.config/rofi/custom-config.rasi"
+
+// Main config
+configuration {
+  kb-remove-to-sol:             "";
+  kb-custom-1:                  "Control+u";
+}
+mainbox {
+  children:                     [ "inputbar", "listview"];
+}
+window {
+  width:                        50%;
+  border-radius:                2em 2em 0em 0em;
+}
+listview {
+  columns:                      3;
+  lines:                        10;
+  cycle:                        false;
+  padding:                      0.5em;
+  spacing:                      0.5em;
+  border-radius:                0em;
+}
+
+// Modules
+entry {
+  placeholder:                  "Search emoji";
+  horizontal-align:             0.4;
+}
+element-text selected,
+element {
+  padding:                      0.2em 0.2em 0.2em 1em;
+}
+element selected.normal {
+  border-radius:                0.4em;
+}
+element-icon {
+  size:                         0%;
+}

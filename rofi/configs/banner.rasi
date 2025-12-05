@@ -1,0 +1,87 @@
+@import "~/.config/rofi/custom-config.rasi"
+
+* {
+    border-width: 4px;
+    border-radius: 50px;
+}
+
+configuration {
+  font:           "JetBrainsMono Nerd Font SemiBold 16";
+  location:       6;
+  y-offset:       1000px;
+  x-offset:       100px;
+  cycle:          false;
+}
+
+/* ---- Mainbox ---- */
+mainbox {
+  children:
+    [ "inputbar", "listview"];
+  border-radius: 0em;
+}
+
+/* ---- Window ---- */
+window {
+  width: 50%;
+  border-radius: 1em 1em 0em 0em;
+  height: inherit;
+}
+
+/* ---- Entry ---- */
+inputbar {
+  enabled:                     false;
+  padding:                     1em;
+  background-color:            transparent;
+  background-image:            url("~/.config/rofi/.current_wallpaper", width);
+  border-radius:               1em;
+}
+entry {
+  font: "JetBrainsMono Nerd Font SemiBold 15";
+  width: 20%;
+  padding: 0.6em;
+  placeholder: " Search emoji";
+  horizontal-align: 0.5;
+  text-align: 0.5;
+
+  cursor-color: @background; /* цвет курсора */
+}
+
+/* ---- Listview ---- */
+listview {
+  columns: 1;
+  lines: 5;
+  fixed-height: false;
+  scrollbar: false;
+  cycle: false;
+  padding:                     0.5em;
+  spacing:                     0.5em;
+  border-radius:               0em;
+}
+
+/* ---- Elements ---- */
+element-text selected,
+element {
+  orientation: horizontal;
+  border-radius: 0px;
+  padding: 0.2em 0.2em 0.2em 1em;
+}
+
+element selected.normal {
+  border-radius: 0.4em;
+  border: 2px;
+  border-color: @selected-normal-background;
+}
+
+element-icon {
+  size: 0%;
+}
+
+element-text {
+  horizontal-align: 0.0;
+  vertical-align: 0.0;
+  padding: 0px;
+  margin: 0px;
+}
+element-text selected.normal {
+  background-color: transparent;
+}

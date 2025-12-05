@@ -1,0 +1,24 @@
+@import "~/.config/rofi/custom-config.rasi"
+
+configuration {
+  location: 2;
+}
+
+/* ---- Window ---- */
+window {
+	width: 40%;
+	height: inherit;
+  children: [ "entry", "message" ];
+	border-radius: 1.5em;
+	x-offset: -20px;
+  y-offset: 50px;
+}
+
+/* ---- Entry ---- */
+entry {
+	expand: true;
+	placeholder: "Google Search";
+	horizontal-align: 0.5;
+	padding: 20px;
+	border-radius: inherit;
+}

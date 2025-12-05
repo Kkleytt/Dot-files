@@ -31,7 +31,7 @@ configuration {
 }
 
 /* ---- Load wallust colors ---- */
-@theme "~/.cache/wal/colors-rofi-dark.rasi"
+@theme "~/.config/caelestia/theme/current/colors/colors-rofi.rasi"
 
 /* ---- Global Properties ---- */
 * {
@@ -74,7 +74,7 @@ inputbar {
     padding:                    1em;
     children:                   [ "textbox-prompt-colon", "entry" ];
     background-color:           transparent;
-    background-image:           url("~/.config/rofi/.current_wallpaper", width);
+    background-image:           url("~/.config/caelestia/theme/current/wallpaper/wallpaper-file", width);
     border-radius:              1.5em;
 }
 

@@ -1,0 +1,74 @@
+@import "~/.config/rofi/custom-config.rasi"
+
+
+configuration {
+    kb-custom-1: "Alt+q";
+    kb-custom-2: "Alt+w";
+    kb-custom-3: "Alt+e";
+    kb-custom-4: "Alt+r";
+    kb-custom-5: "Alt+t";
+    kb-custom-6: "Alt+y";
+    kb-custom-7: "Alt+u";
+    kb-custom-8: "Alt+i";
+    kb-custom-9: "Alt+o";
+    kb-custom-10: "Control+1";
+    kb-custom-11: "Control+2";
+    kb-custom-12: "Control+3";
+    kb-custom-13: "Control+4";
+    kb-custom-14: "Control+5";
+    kb-custom-15: "Control+6";
+    kb-custom-16: "Control+7";
+    kb-custom-17: "Control+8";
+    kb-custom-18: "Control+9";
+}
+
+
+/* ---- Mainbox ---- */
+mainbox {
+  children:
+    [ "inputbar", "listview"];
+}
+
+/* ---- Window ---- */
+window {
+  width: 20%;
+}
+
+/* ---- Entry ---- */
+inputbar {
+    enabled:                    false;
+    spacing:                    0em;
+    padding:                    2em;
+    children:                   [ "textbox-prompt-colon", "entry" ];
+    background-color:           transparent;
+    border-radius:              1.5em;
+}
+
+textbox-prompt-colon {
+  enabled:        false;
+}
+
+entry {
+  enabled: false;
+  placeholder: "";
+  horizontal-align: 0.5;
+}
+
+/* ---- Listview ---- */
+listview {
+  fixed-columns: false;
+  scrollbar: false;
+  colums: 1;
+  lines: 10;
+  spacing: 6px;
+  cycle: false;
+}
+
+/* ---- Element ---- */
+element-icon {
+  	size: 0%;
+}
+element-text {
+  font:                       "JetBrainsMono Nerd Font SemiBold 15";
+  horizontal-align: 0.5;
+}

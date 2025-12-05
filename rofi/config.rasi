@@ -1,6 +1,1 @@
-@import "~/.config/rofi/0-shared-fonts.rasi"
-//@theme "~/.config/rofi/themes/KooL_style-8.rasi"
-
-//@theme "/home/kkleytt/.config/rofi/themes/KooL_style-9.rasi"
-
-@theme "/home/kkleytt/.local/share/rofi/themes/KooL_style-8.rasi"
+/nix/store/nwxnghq8lhxmiaw6kad00452jqzcavhz-home-manager-files/.config/rofi/config.rasi

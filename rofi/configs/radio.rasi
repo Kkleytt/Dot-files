@@ -1,0 +1,38 @@
+@import "~/.config/rofi/custom-config.rasi"
+
+/* ---- Window ---- */
+window {
+  width: inherit;
+  height: inherit;
+}
+
+/* ---- Mainbox ---- */
+mainbox {
+  children:
+    [ "inputbar", "listview"];
+}
+
+/* ---- Entry ---- */
+entry {
+  placeholder: "";
+}
+
+/* ---- Listview ---- */
+listview {
+  columns: 2;
+  lines: 6;
+}
+
+/* ---- Elements ---- */
+element {
+  orientation: horizontal;
+}
+
+element-icon {
+  size: 0%;
+}
+
+element-text {
+  horizontal-align: 0.0;
+  vertical-align: 0.5;
+}
