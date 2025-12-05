@@ -1,0 +1,2 @@
+[console_scripts]
+consumer = consumer:app

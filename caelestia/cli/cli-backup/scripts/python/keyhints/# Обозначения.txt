@@ -1,0 +1,10 @@
+# Обозначения                   ; 
+󰘳                               ; Super  
+󰘶                               ; Shift  
+󰆴                               ; Delete 
+󰘵                               ; Ctrl  
+󰌎                               ; Alt     
+                               ; Backspace 
+󰌒                               ; Tab     
+󱁐                               ; Space 
+󰌑                               ; Return 

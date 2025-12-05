@@ -1,0 +1,2 @@
+dbus-fast>=3.1.2
+psutil>=7.1.3

@@ -1,0 +1,19 @@
+{
+  "cSpell.words": [
+    "asyn",
+    "caelestia",
+    "clearnotify",
+    "cooldown",
+    "dbus",
+    "mkfifo",
+    "notif",
+    "notifs",
+    "блокирующе",
+    "Фейковое"
+  ],
+  "workbench.colorCustomizations": {
+    "editorGhostText.foreground": "#FF47E9"
+  },
+  "docwriter.language": "Russian",
+  "docwriter.style": "reST"
+}

@@ -1,0 +1,9 @@
+[console_scripts]
+animations = Rofi_Animations:app
+clipboard = Rofi_Clipboard:app
+emoji = Rofi_EmojiPicker:app
+fastsearch = Rofi_FastSearch:app
+keyhints = Rofi_KeyHints:app
+radio = Rofi_Radio:app
+snapcode = Rofi_Snapcode:app
+wallpapers = Rofi_Wallpapers:app
