@@ -1,7 +1,0 @@
-caelestia
-hyprland
-media
-peripherals
-python
-shell_config
-shell_manager

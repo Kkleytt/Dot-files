@@ -1,2 +1,0 @@
-[console_scripts]
-hotkeys = shell_manager:app

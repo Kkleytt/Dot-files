@@ -1,1 +1,0 @@
-from server.consumer import start_server
