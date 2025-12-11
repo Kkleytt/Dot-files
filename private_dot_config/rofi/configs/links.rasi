@@ -1,0 +1,39 @@
+@import "~/.config/rofi/custom-config.rasi"
+
+// Main config
+mainbox {
+  children:                     [ "inputbar", "listview"];
+}
+window {
+  width:                        30%;
+  border-radius:                2em 2em 0em 0em;
+}
+listview {
+  columns:                      2;
+  lines:                        8;
+  cycle:                        false;
+  padding:                      0.5em;
+  spacing:                      0.5em;
+  border-radius:                0em;
+  fixed-columns: false;
+
+}
+
+// Modules
+entry {
+  placeholder:                  "";
+  horizontal-align:             0.4;
+}
+element-text selected,
+element {
+  padding:                      0.2em 0.2em 0.2em 1em;
+}
+element selected.normal {
+  border-radius:                0.4em;
+}
+element-icon {
+  size:                         0%;
+}
+element-text {
+  font:                       "JetBrainsMono Nerd Font SemiBold 14";
+}

@@ -1,0 +1,71 @@
+@import "~/.config/rofi/custom-config.rasi"
+
+configuration {
+  /* kb-custom-1:                  "Control-Delete,Control-BackSpace,Delete";
+  kb-custom-2:                  "Control-Alt-Delete"; */
+}
+
+/* ---- Window ---- */
+window {
+  width: 40%;
+  height: inherit;
+}
+
+/* ---- Mainbox ---- */
+mainbox {
+  children:
+    [ "inputbar", "listview"];
+}
+
+/* ---- Entry ---- */
+inputbar {
+  enabled:                     true;
+}
+textbox-prompt-colon {
+  enabled:                    true;
+}
+entry {
+  enabled:                    true;
+  placeholder:                "Select language";
+  horizontal-align:           0.45;
+}
+
+/* ---- Listview ---- */
+listview {
+  columns: 3;
+  lines: 10;
+  fixed-height: false;
+  scrollbar: false;
+  cycle: false;
+  padding:                     0.5em;
+  spacing:                     0.5em;
+  border-radius:               0em;
+}
+
+/* ---- Elements ---- */
+element-text selected,
+element {
+  orientation: horizontal;
+  border-radius: 0px;
+  padding: 0.2em 0.2em 0.2em 1em;
+}
+
+element selected.normal {
+  border-radius: 0.4em;
+  border: 2px;
+  border-color: @selected-normal-background;
+}
+
+element-icon {
+  size: 0%;
+}
+
+element-text {
+  horizontal-align: 0.0;
+  vertical-align: 0.0;
+  padding: 0px;
+  margin: 0px;
+}
+element-text selected.normal {
+  background-color: transparent;
+}

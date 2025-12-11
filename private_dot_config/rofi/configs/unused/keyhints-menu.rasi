@@ -1,0 +1,23 @@
+@import "~/.config/rofi/custom-config.rasi"
+
+// Main config
+configuration {
+  kb-remove-to-sol:             "";
+  kb-custom-1:                  "Control+u";
+}
+mainbox {
+  children:                     [ "inputbar", "listview"];
+}
+listview {
+  columns:                      2;
+  lines:                        6;
+  cycle:                        true;
+}
+
+// Modules
+entry {
+  placeholder:                  "Search keyhints";
+}
+element-icon {
+  size:                         0%;
+}

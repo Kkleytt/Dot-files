@@ -1,0 +1,33 @@
+@import "~/.config/rofi/custom-config.rasi"
+mainbox {
+  children:                           [ "inputbar", "listview"];
+}
+
+window {
+  width: 30%;
+}
+
+textbox-prompt-colon {
+    enabled:                    false;
+}
+entry {
+  placeholder: "Select animation";
+  horizontal-align: 0.5;
+}
+
+listview {
+  columns: 1;
+  lines: 8;
+  cycle: true;
+}
+
+element selected.normal {
+  border-radius: 0.4em;
+  border: 2px;
+  border-color: @selected-normal-background;
+}
+
+element-icon {
+  size: 0%;
+}
+

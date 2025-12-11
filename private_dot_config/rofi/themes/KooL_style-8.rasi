@@ -1,0 +1,260 @@
+/* ---- Configuration ---- */
+configuration {
+    modi:                       "drun,filebrowser,window,run";
+    show-icons:                 true;
+    display-drun:               "  apps";
+    display-run:                "  term";
+    display-filebrowser:        "  files";
+    display-window:             "  window";
+	drun-display-format:        "{name}";
+    window-format:              "{w} · {c} · {t}";
+    hover-select:               true;
+    me-select-entry:            "MouseSecondary";
+    me-accept-entry:            "MousePrimary";   
+
+    kb-mode-complete: "";
+    kb-move-char-back: "";
+    kb-move-char-forward: "";
+    kb-row-up: "Control+k,Up";
+    kb-row-down: "Control+j,Down";
+    kb-row-left: "Control+h,Left";
+    kb-row-right: "Control+l,Right";
+    kb-accept-entry: "Return,KP_Enter";
+    kb-remove-to-eol: ""; 
+    kb-remove-char-back: "BackSpace,Shift+BackSpace";
+    click-to-exit: true;
+
+    font:           "JetBrainsMono Nerd Font SemiBold 12";
+    location:       6;
+    y-offset:       0px;   
+    x-offset:       0px;    
+}
+
+/* ---- Load wallust colors ---- */
+@theme "~/.config/caelestia/theme/current/colors/colors-rofi.rasi"
+
+/* ---- Global Properties ---- */
+* {
+
+    border-width: 4px;
+    border-radius: 50px;
+}
+
+/* ---- Window ---- */
+window {
+    width:                      50%;
+    transparency:               "real";
+    fullscreen:                 false;
+    enabled:                    true;
+    cursor:                     "default";
+    spacing:                    0em;
+    padding:                    0em;
+    border:                     @border-width;
+    border-color:               @active-background;
+    border-radius:              2em 2em 0em 0em;
+    background-color:           @background-color;
+    height:                     inherit;
+}
+
+mainbox {
+    enabled:                    true;
+    spacing:                    0em;
+    padding:                    0em;
+    orientation:                vertical;
+    children:                   [ "inputbar" , "mode-switcher", "message", "listbox" ];
+    background-color:           transparent;
+    border-radius:              0em;
+}
+
+
+/* ---- Inputbar ---- */
+inputbar {
+    enabled:                    true;
+    spacing:                    0em;
+    padding:                    1em;
+    children:                   [ "textbox-prompt-colon", "entry" ];
+    background-color:           transparent;
+    background-image:           url("~/.config/caelestia/theme/current/wallpaper/wallpaper-file", width);
+    border-radius:              1.5em;
+}
+
+textbox-prompt-colon {
+    enabled:                    true;
+    expand:                     false;
+    padding:                    15px 25px 17px 19px;
+    spacing:                    0px;
+    border:                     0px;
+    border-radius:              2em;
+    background-color:           @background;
+    text-color:                 @urgent-background;
+    str:                        "";
+}
+
+entry {
+    enabled:                    true;
+    font:                       "JetBrainsMono Nerd Font SemiBold 15";
+    width:                      10%;
+    border-radius:              2em;
+    spacing:                    0em;
+    padding:                    0.6em;
+    background-color:           @background;
+    text-color:                 @foreground;
+    cursor:                     bold;
+    placeholder:                "Search";
+    placeholder-color:          inherit;
+    horizontal-align: 0.4;
+    cursor-color: @background;
+}
+
+/* ---- Listbox ---- */
+listbox {
+    padding:                     0em;
+    spacing:                     0em;
+    orientation:                 horizontal;
+    children:                    [ "listview" ];
+    background-color:            @background;
+}
+
+/* ---- Listview ---- */
+listview {
+    padding:                     0.5em;
+    spacing:                     0.5em;
+    enabled:                     true;
+    columns:                     2;
+    lines:                       4;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                false;
+    fixed-columns:               false;
+    cursor:                      "default";
+    background-color:            transparent;
+}
+
+
+/* ---- Mode Switcher ---- */
+mode-switcher {
+    orientation:                 horizontal;
+    width:                       2em;
+    enabled:                     true;
+    padding:                     0.7em;
+    spacing:                     1em;
+    background-color:            transparent;
+}
+
+button {
+    cursor:                      pointer;
+    border-radius:               2em;
+    background-color:            @background;
+    text-color:                  @foreground;
+	padding: 0.4em;
+}
+
+button selected {
+    background-color:            @selected-normal-background;
+    text-color:                  @background;
+}
+
+/* ---- Scrollbar ---- */
+scrollbar {
+    border:       				0px;
+    handle-color: 				@selected-normal-background;
+    handle-width: 				2px ;
+    padding:      				0;
+}
+
+
+/* ---- Elements ---- */
+element {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0.5em;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+element-text selected,
+element selected.normal {
+    background-color:            @selected-normal-background;
+    text-color:                  @foreground;
+    border-radius:               1.2em;
+}
+
+element normal.normal {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element normal.urgent {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element normal.active {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element selected.urgent {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element selected.active {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element alternate.normal {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element alternate.urgent {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element alternate.active {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element-icon {
+    size:                        2em;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+/* ---- Message ---- */
+message {
+    background-color:            transparent;
+    border:                      0px;
+}
+textbox {
+	margin:						 12px;
+    padding:                     12px;
+    border-radius:               @border-radius;
+    background-color:            @background;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+error-message {
+    padding:                     0px;
+    border-radius:               @border-radius;
+    background-color:            @background;
+    text-color:                  @foreground;
+}

@@ -1,0 +1,40 @@
+@import "~/.config/rofi/custom-config.rasi"
+
+// Main config
+configuration {
+  kb-remove-to-sol:             "";
+  kb-custom-1:                  "Control+u";
+}
+mainbox {
+  children:                     [ "inputbar", "listview"];
+}
+window {
+  width:                        60%;
+  border-radius:                2em 2em 0em 0em;
+}
+listview {
+  columns:                      1;
+  lines:                        32;
+  cycle:                        false;
+  padding:                      0em;
+  spacing:                      0em;
+  border-radius:                0em;
+}
+
+
+// Modules
+entry {
+  placeholder:                  "Search keybinds";
+  horizontal-align:             0.45;
+}
+element-text selected,
+element {
+  border-radius:                0px;
+  padding:                      0em 1em;
+}
+element selected.normal {
+  border-radius:                0em;
+}
+element-icon {
+  size:                         0%;
+}

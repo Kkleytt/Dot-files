@@ -1,0 +1,44 @@
+@import "~/.config/rofi/custom-config.rasi"
+
+// Main config
+configuration {
+    kb-remove-char-forward: "Delete";
+    kb-move-front: "";
+    
+    kb-custom-1: "Control+d"; // Удалить сборку
+    kb-custom-2: "Control+b"; // Создать сборку
+    kb-custom-3: "Control+r"; // Переключиться на сборку
+    kb-custom-4: "Control+a"; // Очистить систему
+    kb-custom-5: "Control+t"; // Очистить мусор
+}
+mainbox {
+  children:                     [ "inputbar", "listview"];
+}
+window {
+  width:                        50%;
+  border-radius:                2em 2em 0em 0em;
+}
+listview {
+  columns:                      2;
+  lines:                        6;
+  cycle:                        false;
+  padding:                      0.5em;
+  spacing:                      0.5em;
+  border-radius:                0em;
+}
+
+// Modules
+entry {
+  placeholder:                  "NixOS generations";
+  horizontal-align:             0.4;
+}
+element-text selected,
+element {
+  padding:                      0.2em 0.2em 0.2em 1em;
+}
+element selected.normal {
+  border-radius:                0.4em;
+}
+element-icon {
+  size:                         0%;
+}
