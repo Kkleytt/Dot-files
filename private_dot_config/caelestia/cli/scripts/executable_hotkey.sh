@@ -14,7 +14,7 @@ case "$1" in
     exec "$PeripheralsDir/$1/script.sh" "${@:2}" ;;
   panels|lock|shell|theme|services|watcher|rofi|init|dnd)
     exec "$CaelestiaDir/$1/script.sh" "${@:2}" ;;
-  decorate|shadow|hyprapps|kill|idle|starship|window|codesnap|power)
+  decorate|shadow|hyprapps|kill|idle|starship|window|codesnap|power|keyhint)
     exec "$HyprDir/$1/script.sh" "${@:2}" ;;
   *)
     echo "Error args" ;;

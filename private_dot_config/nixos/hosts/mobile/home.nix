@@ -23,9 +23,9 @@
         ty                                        # Статический анализатор типов
         
       #### LSP
-        # nil                                       # Nix
-        # vscode-css-languageserver                 # CSS
-        # vscode-json-languageserver                # JSON
+        nil                                       # Nix
+        vscode-css-languageserver                 # CSS
+        vscode-json-languageserver                # JSON
         bash-language-server                      # Bash
         yaml-language-server                      # YAML
         rust-analyzer                             # Rust
@@ -42,8 +42,8 @@
         eslint                                    # Линтер для JavaScript/TypeScript
       
       #### C / C++
-        # clang                                     # Альтернативный компилятор от LLVM — быстрее, лучше ошибки.
         gcc                                       # Компилятор GNU для C/C++.
+        # clang                                     # Альтернативный компилятор от LLVM — быстрее, лучше ошибки.
 
       #### Editors
         neovim                                    # Улучшенный редактор кода NeoVim
@@ -82,7 +82,7 @@
       # vivaldi                                     # Браузер Vivaldi
       # qutebrowser                                 # Браузер для управления без мышки
       # firefox                                     # Браузер Firefox
-      
+
     ## Office
       onlyoffice-desktopeditors                   # Аналог Microsoft Office
       thunderbird                                 # Mail клиент
