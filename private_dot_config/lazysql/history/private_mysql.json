@@ -1,0 +1,6 @@
+[
+  {
+    "QueryText": "INSERT INTO `airborne`.`Test table` (id, created_at) VALUES (DEFAULT, DEFAULT)",
+    "Timestamp": "2025-11-16T22:57:40.225237546Z"
+  }
+]

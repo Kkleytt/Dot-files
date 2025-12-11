@@ -1,0 +1,440 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "(Editor && mode == full)",
+    "bindings": {
+      "ctrl->": null
+    }
+  },
+  {
+    "context": "ContextStrip",
+    "bindings": {
+      "enter": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl->": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-y": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-alt-y": null
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "ctrl-enter": null
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "enter": null
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "ctrl-enter": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-shift-i": null
+    }
+  },
+  {
+    "context": "PromptEditor",
+    "bindings": {
+      "ctrl-alt-e": null
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-n": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-alt-z": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-alt-e": null
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-n": null
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-n": null
+    }
+  },
+  {
+    "context": "AgentDiff",
+    "bindings": {
+      "ctrl-shift-n": null
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-n": null
+    }
+  },
+  {
+    "context": "(Editor && editor_agent_diff)",
+    "bindings": {
+      "ctrl-shift-n": null
+    }
+  },
+  {
+    "context": "AgentDiff",
+    "bindings": {
+      "ctrl-n": null
+    }
+  },
+  {
+    "context": "(Editor && editor_agent_diff)",
+    "bindings": {
+      "ctrl-n": null
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "enter": null
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "ctrl-enter": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-shift-enter": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "alt-enter": null
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "shift-tab": null
+    }
+  },
+  {
+    "context": "PromptEditor",
+    "bindings": {
+      "ctrl-]": null
+    }
+  },
+  {
+    "context": "PromptEditor",
+    "bindings": {
+      "ctrl-[": null
+    }
+  },
+  {
+    "context": "AgentPanel > NavigationMenu",
+    "bindings": {
+      "shift-backspace": null
+    }
+  },
+  {
+    "context": "(Editor && editor_agent_diff)",
+    "bindings": {
+      "ctrl-shift-y": null
+    }
+  },
+  {
+    "context": "AgentDiff",
+    "bindings": {
+      "ctrl-y": null
+    }
+  },
+  {
+    "context": "(Editor && editor_agent_diff)",
+    "bindings": {
+      "ctrl-y": null
+    }
+  },
+  {
+    "context": "ContextStrip",
+    "bindings": {
+      "up": null
+    }
+  },
+  {
+    "context": "ContextStrip",
+    "bindings": {
+      "right": null
+    }
+  },
+  {
+    "context": "ContextStrip",
+    "bindings": {
+      "left": null
+    }
+  },
+  {
+    "context": "ContextStrip",
+    "bindings": {
+      "down": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "alt-shift-escape": null
+    }
+  },
+  {
+    "context": "(AgentPanel && acp_thread)",
+    "bindings": {
+      "ctrl-n": null
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-y": null
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-y": null
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-y": null
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-y": null
+    }
+  },
+  {
+    "context": "AgentDiff",
+    "bindings": {
+      "ctrl-shift-y": null
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-r": null
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-r": null
+    }
+  },
+  {
+    "context": "(AgentPanel && acp_thread)",
+    "bindings": {
+      "ctrl-alt-t": null
+    }
+  },
+  {
+    "context": "(Editor && editor_agent_diff)",
+    "bindings": {
+      "ctrl-shift-r": null
+    }
+  },
+  {
+    "context": "(AgentPanel && text_thread)",
+    "bindings": {
+      "ctrl-alt-t": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-n": null
+    }
+  },
+  {
+    "context": "(AgentPanel && text_thread)",
+    "bindings": {
+      "ctrl-n": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-alt-n": null
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-r": null
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-r": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-shift-h": null
+    }
+  },
+  {
+    "context": "ContextEditor > Editor",
+    "bindings": {
+      "ctrl-k l": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-alt-p": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-alt-c": null
+    }
+  },
+  {
+    "context": "ContextStrip",
+    "bindings": {
+      "backspace": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-super-b": null
+    }
+  },
+  {
+    "context": "ThreadHistory",
+    "bindings": {
+      "backspace": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-i": null
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "ctrl-i": null
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "ctrl-i": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-shift-j": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-alt-/": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-?": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-shift-a": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-alt-shift-n": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-right": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-left": [
+        "editor::SelectPrevious",
+        {
+          "replace_newest": false
+        }
+      ]
+    }
+  }
+]

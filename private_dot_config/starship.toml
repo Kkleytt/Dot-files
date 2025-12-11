@@ -1,0 +1,241 @@
+add_newline = false
+command_timeout = 500
+
+format = """
+[╭─](logo_bg)\
+$os\
+\
+[](bg:username_bg fg:logo_bg)\
+$username\
+$hostname\
+\
+[](bg:path_bg fg:username_bg)\
+$directory\
+\
+[](bg:git_bg fg:path_bg)\
+$git_branch\
+$git_status\
+$git_commit\
+$git_metrics\
+\
+[](bg:language_bg fg:git_bg)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$kotlin\
+$python\
+$nix_shell\
+$docker_context\
+\
+[](fg:language_bg)\
+$fill\
+\
+[](fg:error_bg)\
+$status\
+\
+[](fg:duration_bg bg:error_bg)\
+$cmd_duration\
+\
+[](fg:time_bg bg:duration_bg)\
+$time\
+$battery\
+\
+[─╮](fg:logo_bg)\
+$line_break\
+[╰─](logo_bg)\
+$character"""
+
+palette = "custom_one"
+right_format = "[─╯](logo_bg)"
+
+[battery]
+disabled = false
+format = "[ $symbol $percentage ]($style)"
+charging_symbol = "󰂄"
+discharging_symbol = "󰂃"
+empty_symbol = "󰂎"
+full_symbol = "󰁹"
+unknown_symbol = "󰁽?"
+
+[[battery.display]]
+style = "bg:time_bg fg:time_fg"
+threshold = 100
+
+[c]
+disabled = false
+format = "[[ ( $version) ](bg:language_bg fg:language_fg)](bg:language_bg)"
+
+[cmd_duration]
+disabled = false
+format = "[ [$duration ](bold bg:duration_bg fg:duration_fg)](bg:duration_bg fg:duration_fg)"
+show_milliseconds = true
+show_notifications = false
+
+[directory]
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+read_only = " 🔒"
+read_only_style = "bg:path_bg"
+style = "bg:path_bg fg:path_fg"
+truncation_length = 3
+
+[directory.substitutions]
+"~/.local/share/Trash/files" = "  "
+"~/.config" = "  "
+"~/Desktop/.dotfiles" = "  "
+"~/Public" = " 󰦑 "
+"~/Desktop" = "  "
+"~/Downloads" = "  "
+"~/Documents" = "  "
+"~/Music" = "  "
+"~/Videos" = "  "
+"~/Pictures" = "  "
+"~/Desktop/Projects" = " 󰧨 "
+"Obsidian" = " 󱓧 "
+
+"task_tracker" = "  "
+"pass_manager" = "  "
+"logger" = "  "
+"smart_garden" = "  "
+"airborne" = " 󱝅 "
+"cut_game" = " 󰆐 "
+"docker_manager" = "  "
+
+".git" = "  "
+".venv" = "  "
+".cache" = "  "
+".config" = "  "
+".env" = "  "
+"api" = "  "
+"tests" = " 󰙨 "
+"logs" = "   "
+"db" = "  "
+"database" = "  "
+"modules" = " 󱒌 "
+"wiki" = " 󰈙 "
+"doc" = " 󰈙 "
+
+
+
+[docker_context]
+disabled = false
+format = "[[ ( $context) ](bg:language_bg fg:language_fg)](bg:language_bg)"
+
+[fill]
+style = "bold fg:logo_bg"
+symbol = "―"
+# symbol = " "
+# symbol = "_‾"
+# symbol = "- "
+# symbol = "― "
+# symbol = " 󱙝  󰊠"
+
+[git_branch]
+disabled = false
+format = "[[  $branch ](bg:git_bg fg:git_fg)](bg:git_bg)"
+
+[git_commit]
+disabled = true
+format = "[($hash$tag)]($style)[ ]()"
+commit_hash_length = 8
+style = "bg:git_bg"
+tag_disabled = false
+tag_symbol = "  "
+
+[git_metrics]
+disabled = false
+format = "[\\[+$added/]($added_style)[-$deleted\\]]($deleted_style)[ ](bg:git_bg)"
+added_style = "bg:git_bg fg:git_fg"
+deleted_style = "bg:git_bg fg:git_fg"
+
+[git_status]
+disabled = false
+format = "[[($all_status$ahead_behind )](bg:git_bg fg:git_fg)](bg:git_bg)"
+
+[golang]
+disabled = false
+format = "[[ ( $version) ](bg:language_bg fg:language_fg)](bg:language_bg)"
+
+[hostname]
+disabled = true
+format = "[@$hostname ](bg:username_bg fg:username_fg)"
+ssh_only = true
+ssh_symbol = ""
+
+[kotlin]
+disabled = false
+format = "[[ ( $version) ](bg:language_bg fg:language_fg)](bg:language_bg)"
+
+[nix_shell]
+disabled = false
+format = "[[ ( $name) ](bg:language_bg fg:language_fg)](bg:language_bg)"
+
+[nodejs]
+disabled = false
+format = "[[ ( $version) ](bg:language_bg fg:language_fg)](bg:language_bg)"
+
+[os]
+disabled = false
+format = "[ 󰊠 ](bg:logo_bg fg:logo_fg)()"
+
+[palettes.catppuccin_mocha]
+logo_bg = "#313244"
+logo_fg = "#b4befe"
+username_bg = "#b4befe"
+username_fg = "#313244"
+path_bg = "#fab387"
+path_fg = "#313244"
+git_bg = "#a6e3a1"
+git_fg = "#313244"
+language_bg = "#f9e2af"
+language_fg = "#11111b"
+error_bg = "#f38ba8"
+error_fg = "#313244"
+duration_bg = "#b4befe"
+duration_fg = "#313244"
+time_bg = "#313244"
+time_fg = "#b4befe"
+
+[palettes.custom_one]
+logo_bg = "#323232"
+logo_fg = "#afafaf"
+username_bg = "#272727"
+username_fg = "#4b6e31"
+path_bg = "#dc9e67"
+path_fg = "#3d2816"
+git_bg = "#c781e7"
+git_fg = "#4c1d62"
+language_bg = "#8ec4cf"
+language_fg = "#315861"
+error_bg = "#cc6767"
+error_fg = "#7c2e2e"
+duration_bg = "#7b8ad3"
+duration_fg = "#3b4473"
+time_bg = "#323232"
+time_fg = "#afafaf"
+
+[python]
+disabled = false
+format = "[[ ( $version)(\\(#$virtualenv\\)) ](bg:language_bg fg:language_fg)](bg:language_bg)"
+version_format = "$major.$minor"
+
+[rust]
+disabled = false
+format = "[[ ( $version) ](bg:language_bg fg:language_fg)](bg:language_bg)"
+
+[status]
+disabled = false
+format = "[ 󰃤 bug ](bg:error_bg fg:error_fg)"
+map_symbol = false
+success_symbol = ""
+
+[time]
+disabled = false
+format = "[ $time](bg:time_bg fg:time_fg)"
+
+[username]
+disabled = false
+format = "[$user]($style)"
+show_always = false
+style_root = "bg:username_bg fg:username_fg bold"
+style_user = "bg:username_bg fg:username_fg"

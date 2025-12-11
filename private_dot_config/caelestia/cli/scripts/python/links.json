@@ -1,0 +1,92 @@
+{
+  "🎮 Развлечения": {
+    "YouTube": "https://www.youtube.com",
+    "Rutube": "https://rutube.ru",
+    "Anilibria": "https://anilibria.tv",
+    "Fanserials": "https://1fanserials.net/",
+    "AnimeLib": "https://v3.animelib.org/",
+    "MangaLib": "https://mangalib.me/",
+    "Animedia": "https://animemedia.info/",
+    "Hdrezka": "https://ru1.hdreskaz.top/",
+    "Lord-films": "https://nz.lordfilm17.ru/",
+    "Яндекс Музыка": "https://music.yandex.ru",
+    "Яндекс Книги": "https://books.yandex.ru"
+  },
+
+  "🏢 Работа": {
+    "HeadHunter": "https://hh.ru",
+    "SuperJob": "https://www.superjob.ru",
+    "Работа.ру": "https://www.rabota.ru/",
+    "Альфа-Банк": "https://job.alfabank.ru/vacancies",
+    "Google Docs": "https://docs.google.com/",
+    "GitHub": "https://github.com",
+    "WakaTime": "https://wakatime.com/dashboard"
+  },
+
+  "🖥 Сервачок": {
+    "Homarr": "http://46.160.250.162:2000/",
+    "aaPanel": "http://46.160.250.162:1903/6ccbdaab",
+    "Backrest": "http://46.160.250.162:2554/",
+    "Portainer": "http://46.160.250.162:2001/",
+    "Dockge": "http://46.160.250.162:2002/",
+    "Xiaomi (admin)": "http://192.168.31.1",
+    "TP-Link (admin)": "http://192.168.0.1",
+    "Glances": "http://46.160.250.162:2005/",
+    "Uptime Kuma": "http://46.160.250.162:2003/",
+    "Memos": "http://46.160.250.162:2611/",
+    "Syncthing (local)": "http://127.0.0.1:8384/",
+    "Dockge (local)": "http://127.0.0.1:5001/",
+    "Portainer (local)": "https://127.0.0.1:5003/"
+     
+  },
+
+  "🛒 Шоппинг": {
+    "Wildberries": "https://www.wildberries.ru",
+    "Яндекс Маркет": "https://market.yandex.ru",
+    "Авито": "https://www.avito.ru",
+    "AliExpress": "https://www.aliexpress.com",
+    "Amazon": "https://www.amazon.com",
+    "eBay": "https://www.ebay.com",
+    "Ozon": "https://www.ozon.ru",
+    "Аптека.ru": "https://apteka.ru"
+  },
+
+  "🥩 Еда": {
+    "PizzaSushiWok": "https://pizzasushiwok.ru",
+    "ДоДо пицца": "https://dodopizza.ru",
+    "Пивальди": "https://pivaldi.ru/",
+    "Яндекс Еда": "https://eda.yandex.ru",
+    "Самокат": "https://samokat.ru/"
+  },
+
+  "🤖 AI": {
+    "Grok": "https://grok.com/",
+    "ChatGPT": "https://chat.openai.com",
+    "Copilot": "https://github.com/features/copilot",
+    "DuckDuckGo": "https://duckduckgo.com/?q=DuckDuckGo+AI+Chat&ia=chat&duckai=1",
+    "GigaChat": "https://giga.chat/"
+  },
+
+  "📖 Обучение": {
+    "LearnPython": "https://www.learnpython.org",
+    "MonkeyType": "https://monkeytype.com",
+    "LeetCode": "https://leetcode.com",
+    "PyPI": "https://pypi.org"
+  },
+
+  "🐧 Linux": {
+    "NixOS packages": "https://search.nixos.org/packages",
+    "Keyboard Mapping": "https://archie-adams.github.io/keyboard-shortcut-map-maker/",
+    "Google Fonts": "https://fonts.google.com",
+    "GitHub": "https://github.com"
+  },
+
+  "🗒 Продуктивность": {
+    "ToDo": "https://to-do.live.com/tasks/today",
+    "YouTrack": "https://kkleytt.youtrack.cloud/issues",
+    "Habitica": "https://habitica.com/",
+    "YouGile": "https://ru.yougile.com/team/my-tasks",
+    "WakaTime": "https://wakatime.com/dashboard",
+    "Google Calendar": "https://calendar.google.com/calendar/u/0/r"
+  }
+}

@@ -1,0 +1,126 @@
+[mgr]
+prepend_keymap = [
+  	# Вкладки — как в браузере
+  	{ on = "<C-t>", 				run = "tab_create --current", 	                        desc = "Новая вкладка" },
+  	{ on = "<C-w>", 				run = "close", 					                        desc = "Закрыть вкладку" },
+  	{ on = "1", 				    run = "tab_switch 0", 			                        desc = "Вкладка 1" },
+  	{ on = "2", 				    run = "tab_switch 1", 			                        desc = "Вкладка 2" },
+  	{ on = "3", 				    run = "tab_switch 2", 			                        desc = "Вкладка 3" },
+  	{ on = "4", 				    run = "tab_switch 3", 			                        desc = "Вкладка 4" },
+  	{ on = "5", 				    run = "tab_switch 4", 			                        desc = "Вкладка 5" },
+  	{ on = "6", 				    run = "tab_switch 5", 			                        desc = "Вкладка 6" },
+  	{ on = "7", 				    run = "tab_switch 6", 			                        desc = "Вкладка 7" },
+  	{ on = "8", 				    run = "tab_switch 7", 			                        desc = "Вкладка 8" },
+  	{ on = "9", 				    run = "tab_switch 8", 			                        desc = "Вкладка 9" },
+  	{ on = "}", 				    run = "tab_switch 1 --relative",                        desc = "Следующая вкладка" },
+  	{ on = "{", 				    run = "tab_switch -1 --relative",                       desc = "Предыдущая вкладка" },
+   
+    # Системные
+    { on = "<Esc>",                 run = "escape --all",                                   desc = "Отменить действие" },
+    { on = "?",                     run = "help",                                           desc = "Показать меню справки" },
+    { on = "o", 					run = "open", 					                        desc = "Открыть" },
+    { on = "O", 					run = "open --interactive", 	                        desc = "Открыть с помощью" },
+    { on = "<Tab>",					run = "spot", 					                        desc = "Показать информацию о файле" },
+    { on = "//",                    run = "hidden toggle",                                  desc = "Отобразить скрытые" },
+    { on = "q", 					run = "quit", 				                            desc = "Выйти" },
+    { on = "Q", 					run = "suspend", 				                        desc = "Выйти с сохранением" },
+
+   	# Поиск
+    { on = "f",                     run = "filter --insensitive",                           desc = "Поиск по имени (fd)" },
+    { on = ["F", "f"],              run = "filter --insensitive",                           desc = "Фильтр с учетом регистра" },
+    { on = ["F", "d"],              run = "filter --via fd",                                desc = "Фильтр по имени (fd)" },
+   	{ on = ["F", "r"], 		        run = "search --via rg", 		                        desc = "Поиск по содержимому (ripgrep)" },
+   	{ on = "]", 				    run = "find_arrow", 			                        desc = "Найти далее"},
+   	{ on = "[", 				    run = "find_arrow --previous", 	                        desc = "Найти предыдущее"},
+    
+    # Linemode
+    { on = "l",                     run = "linemode mtime",                                 desc = "Описание даты изменения" },
+   	{ on = [ "L", "f" ], 		    run = "linemode none", 			                        desc = "Нет описания"},
+    { on = [ "L", "s" ], 		    run = "linemode size", 			                        desc = "Описание размера"},
+    { on = [ "L", "b" ], 		    run = "linemode btime", 		                        desc = "Описание даты создания"},
+    { on = [ "L", "m" ], 		    run = "linemode mtime", 		                        desc = "Описание даты изменения"},
+    { on = [ "L", "p" ], 		    run = "linemode permissions", 	                        desc = "Описание прав"},
+    { on = [ "L", "o" ], 		    run = "linemode owner", 		                        desc = "Описание владельца"},
+    
+    # Сортировка
+    { on = "s",                     run = "sort natural",                                   desc = "Сортировать естественным образом" },
+   	{ on = [ "S", "s" ], 		    run = "sort size", 				                        desc = "Сортировать по размеру" },
+   	{ on = [ "S", "S" ], 		    run = "sort size --reverse", 	                        desc = "Сортировать по размеру (обратно)" },
+    { on = [ "S", "b" ], 		    run = "sort btime", 			                        desc = "Сортировать по дате создания" },
+    { on = [ "S", "B" ], 		    run = "sort btime --reverse", 	                        desc = "Сортировать по дате создания (обратно)" },
+    { on = [ "S", "m" ], 		    run = "sort mtime", 			                        desc = "Сортировать по дате изменения" },
+    { on = [ "S", "M" ], 		    run = "sort mtime --reverse", 	                        desc = "Сортировать по дате изменения (обратно)" },
+    { on = [ "S", "n" ], 		    run = "sort natural", 			                        desc = "Сортировать естественным образом" },
+    { on = [ "S", "N" ], 		    run = "sort natural --reverse",                         desc = "Сортировать естественным образом (обратно)" },
+    { on = [ "S", "a" ], 		    run = "sort alphabetical", 		                        desc = "Сортировать по алфавиту" },
+    { on = [ "S", "A" ], 		    run = "sort alphabetical --reverse",                    desc = "Сортировать по алфавиту (обратно)" },
+    { on = [ "S", "e" ], 		    run = "sort extension", 		                        desc = "Сортировать по расширению" },
+    { on = [ "S", "E" ], 		    run = "sort extension --reverse",                       desc = "Сортировать по расширению (обратно)" },
+    { on = [ "S", "f" ], 		    run = "sort none", 				                        desc = "Без сортировки" },
+
+    # Выделение [ a, A, Ctrl-A]
+    { on = "a", 					run = "toggle", 				                        desc = "Выделить элемент" },
+    { on = [ "A", "a" ], 		    run = "toggle_all", 		                            desc = "Выделить все элементы" },
+    { on = [ "A", "m" ], 		    run = "visual_mode", 		                            desc = "Режим выделения" },
+
+    # Копирование/вырезание/вставка [ c, x, v, V, Shift-C ]
+    { on = "c", 					run = "yank", 					                        desc = "Копировать" },
+    { on = [ "C", "p" ], 		    run = "copy path",				                        desc = "Копировать абсолютный путь" },
+    { on = [ "C", "d" ], 		    run = "copy dirname",			                        desc = "Копировать путь каталога" },
+    { on = [ "C", "f" ], 		    run = "copy filename",			                        desc = "Копировать имя файла" },
+    { on = [ "C", "n" ], 		    run = "copy name_without_ext",	                        desc = "Копировать название файла" },
+    { on = "x", 					run = "yank --cut", 			                        desc = "Вырезать" },
+    { on = "v", 					run = "paste", 					                        desc = "Вставить" },
+    { on = "V", 					run = "paste --force", 			                        desc = "Вставить с перезаписью" },
+
+    # Создание (Shift + M) [ M ]
+    { on = "m",                     run = "create",                                         desc = "Создать файл" },
+    { on = "M",                     run = "create --dir",                                   desc = "Создать директорию" },
+    { on = "u",                     run = "link",                                           desc = "Создать ссылку" },
+    { on = "U",                     run = "hardlink",                                       desc = "Создать жесткую ссылку" },
+    
+    # Редактирование
+    { on = "r",                     run = "rename --empty=stem --cursor=start",             desc = "Переименовать имя файла" },
+    { on = "R",                     run = "rename",                                         desc = "Переименовать" },
+    { on = "d",                     run = "remove --force",                                 desc = "Удалить" },
+    { on = "<Backspace>",			run = "remove --force",			                        desc = "Удалить" },
+    { on = "<Delete>", 				run = "remove --force", 		                        desc = "Удалить" },
+    { on = "D",                     run = "remove --permanently",                           desc = "Удалить навсегда" },
+    { on = "<S-Delete>",            run = "remove --permanently", 	                        desc = "Удалить навсегда" },
+    { on = "<S-Backspace>",			run = "remove --permanently",	                        desc = "Удалить навсегда" },
+
+    # Перемещение
+    { on = "<Left>", 				run = "leave", 					                        desc = "Подняться выше" },
+    { on = "<Right>", 				run = "enter", 					                        desc = "Опуститься ниже" },
+    { on = "<Up>", 					run = "arrow -1", 				                        desc = "Вверх по спику" },
+    { on = "<Down>", 				run = "arrow 1", 				                        desc = "Вниз по списку" },
+    { on = "<S-Up>", 				run = "arrow top", 				                        desc = "До конца вверх по списку" },
+    { on = "<S-Down>", 				run = "arrow bot", 				                        desc = "До конца вниз по списку" },
+    
+    { on = "K", 					run = "arrow top", 				                        desc = "До конца вверх по списку" },
+    { on = "J", 					run = "arrow bot", 				                        desc = "До конца вниз по списку" },
+    
+    # Быстрое перемещение
+    { on = [ "<Space>", "h" ], 		run = "cd ~", 					                        desc = "Перейти домой" },
+    { on = [ "<Space>", "t" ], 		run = "cd ~/.local/share/Trash/files",                  desc = "Перейти в корзину" },
+    { on = [ "<Space>", "d" ], 		run = "cd ~/Downloads", 			                    desc = "Перейти в загрузки" },
+    { on = [ "<Space>", "p" ], 		run = "cd ~/Pictures", 			                        desc = "Перейти в изображения" },
+    { on = [ "<Space>", "D" ],	    run = "cd ~/Documents", 		                        desc = "Перейти в документы" },
+    { on = [ "<Space>", "m" ], 		run = "cd ~/Music", 			                        desc = "Перейти в музыку" },
+    { on = [ "<Space>", "v" ], 		run = "cd ~/Videos", 			                        desc = "Перейти в видео" },
+    { on = [ "<Space>", "b" ], 		run = "cd ~/Desktop/Backups", 			                desc = "Перейти в бекапы" },
+    { on = [ "<Space>", "w" ], 		run = "cd ~/Pictures/Wallpapers",                       desc = "Перейти в обои" },
+    { on = [ "<Space>", "s" ], 		run = "cd ~/Pictures/Screenshots",                      desc = "Перейти в скриншоты" },
+    { on = [ "<Space>", "r" ], 		run = "cd ~/Videos/Recordings",                         desc = "Перейти в записи экрана" },
+    { on = [ "<Space>", "c" ], 		run = "cd ~/Desktop/.dotfiles/.config",                 desc = "Перейти в /.config" },
+    { on = [ "<Space>", "n" ],      run = "cd ~/Desktop/.dotfiles/.config/nixos",           desc = "Перейти в /Nixos" },
+    { on = [ "<Space>", "h" ], 		run = "cd ~/Desktop/.dotfiles/.config/hypr",            desc = "Перейти в /Hyprland" },
+    { on = [ "<Space>", "C" ], 		run = "cd ~/Desktop/.dotfiles/.config/caelestia",       desc = "Перейти в /Caelestia" },
+    { on = [ "<Space>", "j" ], 		run = "cd ~/Desktop/Projects", 			                desc = "Перейти в /Projects" },
+    
+    { on = [ "<Space>", "1" ], 		run = "cd ~/Desktop/Projects/actual/task_tracker",      desc = "Перейти в /Task-Tracker" },
+    { on = [ "<Space>", "2" ], 	    run = "cd ~/", 					                        desc = "Перейти в /Project-2" },
+    { on = [ "<Space>", "8" ], 	    run = "cd ~/", 					                        desc = "Перейти в /Project-3" },
+    { on = [ "<Space>", "9" ], 	    run = "cd ~/", 					                        desc = "Перейти в /Project-4" },
+    { on = [ "<Space>", "0" ], 	    run = "cd ~/", 					                        desc = "Перейти в /Project-5" },
+]

@@ -1,0 +1,75 @@
+# --- Модули на верхнем уровне ---
+[tool.setuptools]
+py-modules = [
+    "shell_config",
+    "shell_manager"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.uv.workspace]
+members = ["hotkey", "hotkey/python"]
+
+# --- Проект ---
+[project]
+name = "hotkey"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "typer>=0.20.0",
+]
+
+# --- Окружения ---
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6.9",
+    "mypy>=1.11.0",
+    "pytest>=8.3.0",
+    "typer>=0.12.3",
+]
+test = [
+    "pytest>=8.3.0",
+    "coverage>=7.6.0",
+]
+prod = [
+    "gunicorn>=22.0.0",
+]
+
+# --- Ярлыки ---
+[project.scripts]
+hotkeys = "shell_manager:app"
+
+# --- Ruff ---
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+# --- MyPy
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unused_configs = true
+warn_return_any = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+# --- Pytest ---
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+
+# --- Coverage ---
+[tool.coverage.run]
+branch = true
+source = ["."]
+omit = ["tests/*"]
+
+# --- Typer ---
+[tool.typer]
+scripts = ["snapcode", "radio", "fastsearch"]

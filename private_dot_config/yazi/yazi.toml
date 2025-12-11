@@ -1,0 +1,102 @@
+[mgr]
+ratio = [ 1, 4, 3 ]
+sort_by = "natural"
+sort_sensitive = true
+sort_dir_first = true
+sort_reverse = false
+linemode = "mtime"
+show_hidden = false
+show_symlink = true
+
+[preview]
+max_width = 1000
+max_height = 1000
+cache_dir = "$HOME/.cache/yazi"
+image_quality = 90
+tab_size = 1
+
+[opener]
+
+text_viewers = [
+    { run = 'zeditor --add "$@"',      			orphan = true,  block = false, 	for = "unix", 	desc = "Zed" },
+    { run = 'zeditor --new "$@"',      			orphan = true,  block = false, 	for = "unix", 	desc = "Zed (новое окно)" },
+    # { run = 'nvim "$@"',          				orphan = false, block = true,  	for = "unix", 	desc = "Neovim" },
+    # { run = 'kitty -e nvim "$@"',       		orphan = true,  block = false, 	for = "unix", 	desc = "Neovim (новое окно)" },
+    # { run = 'kitty nano "$@"',					orphan = false, block = true,  	for = "unix", 	desc = "Nano" },
+    { run = 'code --goto "$@"',         		orphan = true,  block = false, 	for = "unix", 	desc = "VS Code" },
+    { run = 'code "$(dirname "$@")"',     		orphan = true,  block = false, 	for = "unix", 	desc = "VS Code (открыть папку)" },
+    # { run = 'vscodium --goto "$@"',     		orphan = true,  block = false, 	for = "unix", 	desc = "VSCodium" },
+    # { run = 'vscodium "$(dirname "$@")"', 		orphan = true,  block = false, 	for = "unix", 	desc = "VSCodium (открыть папку)" }
+]
+image_viewers = [
+    { run = 'swayimg -f "$@"',                  orphan = true,  block = false,  for = "unix",   desc = "SwayImg" },
+    { run = 'loupe "$@"', 		                orphan = true, 	block = false, 	for = "unix", 	desc = "Loupe" },
+    { run = 'satty -f "$@"', 		                orphan = true, 	block = false, 	for = "unix", 	desc = "Satty" },
+    { run = 'gradia "$@"', 		                orphan = true, 	block = false, 	for = "unix", 	desc = "Gradia" },
+]
+audio_viewers = [
+    { run = 'musicpod "$@"',                    orphan = true,  block = false,  for = "unix",   desc = "Musicpod" },
+    { run = 'termusic "$@"',                    orphan = false, block = true,   for = "unix",   desc = "Termusic" },
+    { run = 'mpv "$@"',                         orphan = false, block = true,   for = "unix",   desc = "Mpv" },
+]         
+video_viewers = [
+    { run = 'clapper "$@"',                     orphan = true,  block = false,  for = "unix",   desc = "Clapper" },
+    { run = 'mpv "$@"',                         orphan = true,  block = false,  for = "unix",   desc = "Mpv" },
+    { run = 'tplay "$@"',                       orphan = false, block = true,   for = "unix",   desc = "Tplay" },
+]
+pdf_viewers = [
+    { run = 'tdf "$@"',                         orphan = false, block = true,   for = "unix",   desc = "Tdf" },
+    { run = 'papers "$@"',                      orphan = true,  block = false,  for = "unix",   desc = "Papers" },
+    { run = 'onlyoffice-desktopeditors "$@"',   orphan = true,  block = false,  for = "unix",   desc = "Onlyoffice" },
+]
+markdown = [
+    { run = 'glow "$@" -t -l',                  orphan = false, block = true,   for = "unix",   desc = "Glow" }
+]
+html =          [ { run = 'xdg-open "$@"',      orphan = true,  block = false,  for = "unix",   desc = "Открыть в браузере" }]
+archive =       [ { run = 'ouch decompress "$@"',orphan = true, block = true, 	for = "unix",   desc = "Распаковать здесь" } ]
+fallback =      [ { run = 'xdg-open "$@"', 		orphan = true, 	block = false,  for = "unix",	desc = "Системный opener" } ]
+
+[open]
+prepend_rules = [
+	{ name = "*.json", 					use = "text_viewers" },
+	{ name = "*.html", 					use = "text_viewers" },
+	{ name = "*.nix", 					use = "text_viewers" },
+	{ name = "*.toml", 					use = "text_viewers" },
+	{ name = "*.yaml", 					use = "text_viewers" },
+	{ name = "*.md", 					use = ["markdown", "text_viewers"] },
+]
+rules = [
+    { mime = "text/*", 					use = "text_viewers" },
+    { mime = "image/*", 				use = "image_viewers" },
+    { mime = "video/*", 				use = "video_viewers" },
+    { mime = "audio/*", 				use = "audio_viewers" },
+    { mime = "application/pdf",         use = "pdf_viewers" },
+    { mime = "application/json", 		use = "text_viewers" },
+    { mime = "application/javascript",	use = "text_viewers" },
+    { mime = "text/html",               use = ["html", "text_viewers"] }
+]
+append_rules = [ { name = "*", use = "fallback" } ]
+
+[plugin]
+prepend_preloaders = [
+    # Mediainfo
+    { mime = "{audio,video,image}/*", run = "mediainfo" },
+    { mime = "application/subrip", run = "mediainfo" },
+    { mime = "application/postscript", run = "mediainfo" },
+]
+
+prepend_previewers = [
+    # Видео,Фото,Аудио
+    { mime = "{audio,video,image}/*", run = "mediainfo"},
+    { mime = "application/subrip", run = "mediainfo" },
+    { mime = "application/postscript", run = "mediainfo" },
+
+    # Папки
+	{ mime = "inode/directory", run = "folder" },
+
+    # Архивы
+    { mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}", run = "ouch" },
+]
+
+[tasks]
+image_alloc      = 1073741824

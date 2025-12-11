@@ -1,0 +1,14 @@
+[flavor]
+# dark = "ayu-dark"												# Оценка: 7 / 10
+# dark = "catppuccin-macchiato"									# Оценка: 6 / 10
+# dark = "catppuccin-mocha"										# Оценка: 6 / 10
+# dark = "dracula"												# Оценка: 5 / 10
+# dark = "everforest-medium"  									# Оценка: 7 / 10
+# dark = "flexoki-dark"											# Оценка: 8 / 10
+dark = "gruvbox-dark"                                         # Оценка 9 / 10
+# dark = "kanagawa-dragon"										# Оценка: 8 / 10
+# dark = "kanagawa-lotus"  										# Оценка: 8 / 10
+# dark = "kanagawa"												# Оценка: 8 / 10
+# dark = "rose-pine"  											# Оценка: 7 / 10
+# dark = "tokyonight-storm"										# Оценка: 6 / 10
+# dark = "vscode-dark-modern"  									# Оценка: 6 / 10

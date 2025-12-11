@@ -1,0 +1,31 @@
+ConfigFile = '/home/kkleytt/.config/lazysql/config.toml'
+
+[application]
+DefaultPageSize = 300
+DisableSidebar = false
+SidebarOverlay = false
+MaxQueryHistoryPerConnection = 100
+
+[[database]]
+Name = 'Mysql'
+URL = 'mysql://airborne:airborne@46.160.250.162:2150'
+Provider = 'mysql'
+Username = ''
+Password = ''
+Hostname = ''
+Port = ''
+DBName = ''
+URLParams = ''
+Commands = []
+
+[[database]]
+Name = 'Test mysql'
+URL = 'mysql://airborne:airborne@46.160.250.162:2150/airborne'
+Provider = 'mysql'
+Username = ''
+Password = ''
+Hostname = ''
+Port = ''
+DBName = 'airborne'
+URLParams = ''
+Commands = []

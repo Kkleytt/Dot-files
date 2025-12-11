@@ -1,0 +1,35 @@
+{
+  "name": "Japan Green + Halloween",
+  "colors": [
+    "#C2CBA3",
+    "#69705C",
+    "#131411"
+  ],
+  // Установка обоев через caelestia wallpaper set {path}
+  "wallpaper": { 
+    "name": "018.png",
+    "directory": "/home/kkleytt/Pictures/Wallpapers/Aesthetic",
+    "absolute_path": "/home/kkleytt/Pictures/Wallpapers/Aesthetic/018.png",
+    "resolution": "1920, 1080"
+  },
+  // Установка иконок в caelestia (редактируя файл config.json)
+  // и также в starship (редактируя файл starship.toml)
+  "icons": {
+    "sidebar": {
+      "active": "",
+      "enable": "󰯈",
+      "disable": "󰮿"
+    },
+    "starship": {
+      "system": "",
+      "empty": " 󰊠  󱙝"
+    }
+  },
+  // Установка gif в caelestia (редактируя файл config.json)
+  "gifs": {
+    "directory": "/home/kkleytt/.config/caelestia/theme/gifs",
+    "dashboard": "fantom.gif",
+    "media": "fantom.gif",
+    "lock": "clippy.gif"
+  }
+}

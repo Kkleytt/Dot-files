@@ -1,0 +1,96 @@
+# --- Модули на верхнем уровне ---
+[tool.setuptools]
+py-modules = [
+    "system_utils",
+    "Rofi_Wallpapers", 
+    "Rofi_Radio", 
+    "Rofi_FastSearch", 
+    "Rofi_EmojiPicker",
+    "Rofi_KeyHints",
+    "Rofi_Clipboard",
+    "Rofi_Animations",
+    "Rofi_Snapcode",
+    "Rofi_Nixos",
+    "Rofi_Links",
+    "Rofi_Peripherals"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.uv.workspace]
+members = ["python"]
+
+# --- Проект ---
+[project]
+name = "python"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fonttools>=4.60.1",
+    "httpx>=0.28.1",
+]
+
+# --- Окружения ---
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6.9",
+    "mypy>=1.11.0",
+    "pytest>=8.3.0",
+    "typer>=0.12.3",
+]
+test = [
+    "pytest>=8.3.0",
+    "coverage>=7.6.0",
+]
+prod = [
+    "gunicorn>=22.0.0",
+]
+
+# --- Ярлыки ---
+[project.scripts]
+wallpapers = "Rofi_Wallpapers:app"
+radio = "Rofi_Radio:app"
+fastsearch = "Rofi_FastSearch:app"
+emoji = "Rofi_EmojiPicker:app"
+keyhints = "Rofi_KeyHints:app"
+clipboard = "Rofi_Clipboard:app"
+animations = "Rofi_Animations:app"
+snapcode = "Rofi_Snapcode:app"
+nixos = "Rofi_Nixos:app"
+links = "Rofi_Links:app"
+peripherals = "Rofi_Peripherals:start"
+
+# --- Ruff ---
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+# --- MyPy
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unused_configs = true
+warn_return_any = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+# --- Pytest ---
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+
+# --- Coverage ---
+[tool.coverage.run]
+branch = true
+source = ["."]
+omit = ["tests/*"]
+
+# --- Typer ---
+[tool.typer]
+scripts = ["snapcode", "radio", "fastsearch"]
