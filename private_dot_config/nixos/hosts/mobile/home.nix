@@ -74,8 +74,6 @@
     ## Необязательные приложения
       rofi-bluetooth                              # Управление Bluetooth через Rofi
       rofi-network-manager                        # Управление интернетом через Rofi
-      kanri                                       # GUI Kanban доска
-      bandwhich                                   # Вывод трафика и информации
 
     ## Browsers
       # brave                                       # Браузер Brave
@@ -86,7 +84,6 @@
     ## Office
       onlyoffice-desktopeditors                   # Аналог Microsoft Office
       thunderbird                                 # Mail клиент
-      # figma-linux                                 # Неофициальный клиент Figma
 
     ## Notepads & Read apps
       obsidian                                    # Полноценный Markdown редактор
@@ -99,6 +96,7 @@
 
     ## ToDo & Time control apps
       pomodoro-gtk                                  # GUI таймер
+      super-productivity                            # Полноценные ToDo заметки
       # morgen                                      # Все в одном: Календарь, Задачи, Заметки, Напоминания
       # errands                                     # Todo заметки
       # planify                                     # Красивые ToDo заметки
@@ -117,12 +115,12 @@
       baobab                                      # Просмотр использования диска
       gnome-secrets                               # Менеджер паролей
       gnome-disk-utility                          # Управление дисками
-      gnome-sound-recorder                        # Запись аудио
       gnome-clocks                                # Часы, Таймер, Секундомер
       gnome-calculator                            # Калькулятор
       dialect                                     # Переводчик
-      gnome-weather                               # Погода
-      sticky-notes                                # Быстрые заметки
+      # gnome-weather                               # Погода
+      # sticky-notes                                # Быстрые заметки
+      # gnome-sound-recorder                        # Запись аудио
       # gnome-text-editor                           # Текстовый редактор
       # gnome-boxes                                 # Управление виртуальными машинами
       # turnon                                      # Wake-On-Lan приложение
@@ -182,8 +180,3 @@
   };
 
 }
-
-# Найти новые темы + проги:
-# Aerc
-# Insomnia / hoppscotch / 
-# PyRadio

@@ -30,9 +30,8 @@
     # Tasks
       pom                                           # CLI таймер
       dooit                                         # TUI менеджер задач
-      taskwarrior-tui                               # TUI менеджер задач
       calcurse                                      # TUI календарь со списком задач  
-      calcure                                       # TUI календарь со списком задач
+      calcure                                       # TUI календарь
       
     # Дашборд / Разное
       wtfutil                                       # TUI дашборд 
@@ -138,32 +137,26 @@
 
       
       # Lazy
-      lj        = "lazyjournal";
-      lh        = "lazyssh";
-      lq        = "lazysql";
-      lp        = "rainfrog";
-      ld        = "lazydocker";
-      lg        = "gitui";
+      lzj       = "lazyjournal";
+      lzh       = "lazyssh";
+      lzs       = "lazysql";
+      lzf       = "rainfrog";
+      lzd       = "lazydocker";
+      lzg       = "gitui";
       
       # Утилиты
       toy       = "pipes.sh -p 4 -t 3 -c 8 -r 0";
-      gt        = "gtt -src English -src Russian";
-      nv        = "navi";
-      tl        = "tldr";
-      st        = "tokei";
-      tw        = "taskwarrior-tui";
-      cl        = "calcurse";
-      ds        = "wtfutil";
+      trans     = "gtt -src English -src Russian";
 
       # git
-      gu        = "gitui";
-      gb        = "serie";
-      gi        = "git init";
-      ga        = "git add";
-      gc        = "git commit";
-      gp        = "git push";
-      gl        = "git pull";
-      gs        = "git status";
+      gtu       = "gitui";
+      gts       = "serie";
+      gti       = "git init";
+      gta       = "git add";
+      gtc       = "git commit";
+      gtp       = "git push";
+      gtl       = "git pull";
+      gts       = "git status";
       
       # Сеть и интернет
       http      = "xh -F -j -f";
