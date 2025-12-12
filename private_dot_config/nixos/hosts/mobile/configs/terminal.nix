@@ -162,7 +162,7 @@
       wf        = "impala";                           # Работа с WiFi
       bl        = "bluetui";                          # Работа с Bluetooth
       ping      = "gping";                            # Пинг серверов
-      chz-push  = "chezmoi apply --force && cd ~/Desktop/Dotfiles && git add . && git commit -m 'Auto commit by chezmoi' && git push origin main && exit";
+      chz-push  = "chezmoi apply --force && cd ~/Desktop/Dotfiles && git add . && git commit -m 'Auto commit by chezmoi' && git push origin main";
       
       # Прочиe сокращения
       office    = "onlyoffice-desktopeditors";        # Офисный пакет
