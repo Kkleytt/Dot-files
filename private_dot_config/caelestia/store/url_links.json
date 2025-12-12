@@ -83,10 +83,18 @@
 
   "🗒 Продуктивность": {
     "ToDo": "https://to-do.live.com/tasks/today",
+    "Miro": "",
     "YouTrack": "https://kkleytt.youtrack.cloud/issues",
     "Habitica": "https://habitica.com/",
     "YouGile": "https://ru.yougile.com/team/my-tasks",
     "WakaTime": "https://wakatime.com/dashboard",
     "Google Calendar": "https://calendar.google.com/calendar/u/0/r"
+  },
+  "🖊 Дизайн": {
+    "Figma": "https://www.figma.com/",
+    "Colors": "https://coolors.co/",
+    "Excalidraw": "https://excalidraw.com/",
+    "Paletton": "https://paletton.com/",
+    "Color Hunt": "https://colorhunt.co/"
   }
 }

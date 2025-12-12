@@ -9,7 +9,7 @@ import system_utils as utils
 
 # Пути
 home = Path.home()
-animations_dir = home / ".config" / "hypr" / "animations"
+animations_dir = home / ".config" / "caelestia" / "store" / "hyprland_animations"
 user_configs = home / ".config" / "hypr" / "UserConfigs"
 
 def send_notify(body: str = "", icon: str = "danger", sound: str = "error-2"):

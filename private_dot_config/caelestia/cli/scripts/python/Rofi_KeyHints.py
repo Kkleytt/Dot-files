@@ -4,8 +4,7 @@ import sys
 
 import system_utils as utils
 
-SCRIPT_DIR = Path(__file__).resolve().parent
-KEYHINTS_DIR = SCRIPT_DIR / "keyhints"
+KEYHINTS_DIR = Path.home() / ".config" / "caelestia" / "store" / "keybinds_old"
 
 if not KEYHINTS_DIR.exists():
     print(f"Ошибка: {KEYHINTS_DIR} не найдена!", file=sys.stderr)

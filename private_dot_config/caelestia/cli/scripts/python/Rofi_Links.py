@@ -8,7 +8,7 @@ import system_utils as utils
 
 # Путь к JSON с ссылками
 FIFO_PATH: Path = Path.home() / ".cache" / "caelestia" / "osd.fifo"
-LINKS = Path.home() / ".config" / "caelestia" / "cli" / "scripts" / "python" / "links.json"
+LINKS = Path.home() / ".config" / "caelestia" / "store" / "url_links.json"
 
 # Отправка уведомления
 def send_notify(body: str = "", icon: str = "danger", sound: str = "error-2"):
