@@ -53,7 +53,6 @@
       xh                                            # HTTP-клиент нового поколения
       httpie                                        # Удобный HTTP клиент
       posting                                       # TUI Rest API клиент
-      oha                                           # TUI нагрузочное тестирование
       sniffnet                                      # TUI трафик сети
       trippy                                        # TUI диагностика сети
       gping                                         # Ping с графиком
@@ -80,18 +79,14 @@
       delta                                         # Улучшенный git diff — с подсветкой, side-by-side и навигацией
       trash-cli                                     # Безопасный rm — удаляет в корзину с возможностью восстановления
       procs                                         # Улучшенный ps — красивый и информативный вывод процессов
-      zsh-fzf-tab                                   # Замена стандартного Tab-комплита на fzf-подсказки
       hyperfine                                     # Тест скорости команд
     
     # Приколюхи
       wthrr                                         # TUI погода
       clock-rs                                      # TUI вывод времени
       silicon                                       # Красивые скриншоты кода
-      terminal-toys                                 # TUI вывод экрана ожидания
       pipes                                         # TUI вывод экрана ожидания
-      astroterm                                     # TUI вывод звездной галактики
       smassh                                        # TUI аналог MonkeyType     
-      ttyper                                        # TUI аналог MonkeyType
   ];
 
   programs.zsh = {
@@ -157,7 +152,6 @@
       gts       = "git status";                       # Статус текущего репозитория
       
       # Сеть и интернет
-      http      = "xh -F -j -f";                      # Запросы в интернет (xh)
       hp        = "httpie";                           # Запросы в интернет (httpie)
       wf        = "impala";                           # Работа с WiFi
       bl        = "bluetui";                          # Работа с Bluetooth
