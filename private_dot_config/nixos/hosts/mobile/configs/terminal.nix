@@ -123,51 +123,50 @@
       lt        = "eza --tree --level=3 --icons";
       cd        = "z";
       cls       = "clear";
-      c         = "clear";
 
       # Работа с файлами
-      cat       = "bat --style=plain";
-      rm        = "trash-put";
-      grep      = "rg";
-      find      = "fd";
-      ps        = "procs";
-      y         = "yazi";
-      df        = "duf";
-      du        = "dua i";
-
+      cat       = "bat --style=plain";                # Красивый вывод файла
+      rm        = "trash-put";                        # Удаление файла в корзину
+      grep      = "rg";                               # Поиск по содержимому
+      find      = "fd";                               # Поиск по имени
+      ps        = "procs";                            #
+      y         = "yazi";                             # Файловый менеджер
+      df        = "duf";                              # Состояние дисков
+      du        = "dua i";                            # Очистка дисков
       
       # Lazy
-      lzj       = "lazyjournal";
-      lzh       = "lazyssh";
-      lzs       = "lazysql";
-      lzf       = "rainfrog";
-      lzd       = "lazydocker";
-      lzg       = "gitui";
+      lzj       = "lazyjournal";                      # Журнал
+      lzh       = "lazyssh";                          # SSH интерфейс
+      lzs       = "lazysql";                          # SQL интерфейс
+      lzf       = "rainfrog";                         # 
+      lzd       = "lazydocker";                       # Docker интерфейс
+      lzg       = "gitui";                            # Git интерфейс
       
       # Утилиты
-      toy       = "pipes.sh -p 4 -t 3 -c 8 -r 0";
-      trans     = "gtt -src English -src Russian";
+      toy       = "pipes.sh -p 4 -t 3 -c 8 -r 0";     # Фон
+      trans     = "gtt -src English -src Russian";    # Переводчик
 
       # git
-      gtu       = "gitui";
-      gts       = "serie";
-      gti       = "git init";
-      gta       = "git add";
-      gtc       = "git commit";
-      gtp       = "git push";
-      gtl       = "git pull";
-      gts       = "git status";
+      gtu       = "gitui";                            # Интерфейс управления
+      gtd       = "serie";                            # Граф веток
+      gti       = "git init";                         # Создание локального репозитория
+      gta       = "git add";                          # Добавление новых файлов
+      gtc       = "git commit";                       # Сохранение текущих изменений
+      gtp       = "git push";                         # Обновление удаленного репозитория
+      gtl       = "git pull";                         # Обновление локального репозитория
+      gts       = "git status";                       # Статус текущего репозитория
       
       # Сеть и интернет
-      http      = "xh -F -j -f";
-      hp        = "httpie";
-      hpp       = "httpie-desktop";
-      wf        = "impala";
-      bl        = "bluetui";
-      ping      = "gping"; 
+      http      = "xh -F -j -f";                      # Запросы в интернет (xh)
+      hp        = "httpie";                           # Запросы в интернет (httpie)
+      wf        = "impala";                           # Работа с WiFi
+      bl        = "bluetui";                          # Работа с Bluetooth
+      ping      = "gping";                            # Пинг серверов
+      chz-apply = "chezmoi apply --force";
+      chz-push  = "cd ~/Desktop/Dotfiles && git add . && git commit -m 'Auto commit by chezmoi' && git push origin main";
       
       # Прочиe сокращения
-      office    = "onlyoffice-desktopeditors";
+      office    = "onlyoffice-desktopeditors";        # Офисный пакет
     };
 
     initContent = lib.mkMerge [
