@@ -160,7 +160,6 @@
       enable = true;
       packages = [
         "app.zen_browser.zen"                       # Браузер Zen на базе Firefox 
-        # "io.beekeeperstudio.Studio"                 # Управление SQL Базами Данных 
       ];
     };
 
