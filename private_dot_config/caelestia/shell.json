@@ -167,7 +167,7 @@
       "showKbLayout": true,
       "showMicrophone": true,
       "showNetwork": true,
-      "showLockStatus": true
+      "showLockStatus": false
     },
     "tray": {
       "background": false,

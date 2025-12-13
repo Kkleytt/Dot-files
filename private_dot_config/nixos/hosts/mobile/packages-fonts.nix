@@ -91,7 +91,8 @@
 
     ## 🧙 Разное
       polkit_gnome                                # Агент аутентификации  
-      flatpak                                     # Менеджер пакетов Flatpak  
+      flatpak                                     # Менеджер пакетов Flatpak
+      beekeeper-studio  
   ]);
 
 
@@ -159,8 +160,7 @@
       enable = true;
       packages = [
         "app.zen_browser.zen"                       # Браузер Zen на базе Firefox 
-        "io.beekeeperstudio.Studio"                 # Управление SQL Базами Данных 
-        "io.github.lainsce.Emulsion"                # Цветовая палетка
+        # "io.beekeeperstudio.Studio"                 # Управление SQL Базами Данных 
       ];
     };
 

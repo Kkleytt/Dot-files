@@ -96,7 +96,6 @@
 
     ## ToDo & Time control apps
       pomodoro-gtk                                  # GUI таймер
-      super-productivity                            # Полноценные ToDo заметки
       # morgen                                      # Все в одном: Календарь, Задачи, Заметки, Напоминания
       # errands                                     # Todo заметки
       # planify                                     # Красивые ToDo заметки
