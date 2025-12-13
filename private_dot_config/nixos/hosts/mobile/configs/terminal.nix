@@ -41,19 +41,15 @@
     # Media
       gtt                                           # TUI переводчик
       tdf                                           # TUI просмотр PDF
-      papers                                        # Красивый просмотр PDF
       termusic                                      # TUI музыкальный плеер 
       swayimg                                       # TUI просмотрщик изображений 
+      fx                                            # TUI просмотрщик JSON
       glow                                          # TUI Markdown редактор
-      codesnap                                      # Создание скриншотов кода
-      asciinema                                     # Создание записей терминала
       gpu-screen-recorder                           # Создание записей экрана
       
     # Сеть и интернет
-      xh                                            # HTTP-клиент нового поколения
       httpie                                        # Удобный HTTP клиент
       posting                                       # TUI Rest API клиент
-      sniffnet                                      # TUI трафик сети
       trippy                                        # TUI диагностика сети
       gping                                         # Ping с графиком
       bluetui                                       # TUI для работы с Bluetooth 
@@ -72,7 +68,6 @@
     # Остальное
       zellij                                        # TUI мультиплексор
       jq                                            # Мощный процессор JSON прямо в терминале
-      fx                                            # TUI для работы с JSON
       bat                                           # Улучшенный cat — с подсветкой синтаксиса и номерами строк
       starship                                      # Красивый и сверхбыстрый prompt для терминала
       atuin                                         # Умная история команд с поиском и синхронизацией
@@ -85,6 +80,7 @@
       wthrr                                         # TUI погода
       clock-rs                                      # TUI вывод времени
       silicon                                       # Красивые скриншоты кода
+      asciinema                                     # Создание записей терминала
       pipes                                         # TUI вывод экрана ожидания
       smassh                                        # TUI аналог MonkeyType     
   ];
@@ -209,7 +205,6 @@
       update_check = false;
       style = "compact";
       inline_height = 20;
-      # enter_accept = "enter";
       search_mode = "prefix";
       filter_mode = "global";
     };
