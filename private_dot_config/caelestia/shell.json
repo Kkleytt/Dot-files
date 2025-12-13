@@ -72,11 +72,6 @@
       "inhibitWhenAudio": true,
       "timeouts": [
         {
-          "timeout": 30,
-          "idleAction": "/home/kkleytt/.config/caelestia/cli/scripts/hotkey.sh idle notify off",
-          "returnAction": "/home/kkleytt/.config/caelestia/cli/scripts/hotkey.sh idle notify on"
-        },
-        {
           "timeout": 600,
           "idleAction": "lock"
         },
