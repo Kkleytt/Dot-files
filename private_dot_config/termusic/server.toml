@@ -29,7 +29,7 @@ long_tracks = 30
 [podcast]
 concurrent_downloads_max = 3
 max_download_retries = 3
-download_dir = "/home/kkleytt/Музыка/podcast"
+download_dir = "/home/kkleytt/Music/Podcasts"
 
 [backends.rusty]
 soundtouch = true
