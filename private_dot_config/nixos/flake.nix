@@ -50,7 +50,8 @@
   			config = {
   				allowUnfree = true;
   				permittedInsecurePackages = [ 
-  					"libsoup-2.74.3" 
+  					"libsoup-2.74.3"
+					"beekeeper-studio-5.3.4"
   				];
   			};
   		};
