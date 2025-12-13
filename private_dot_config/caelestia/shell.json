@@ -72,22 +72,20 @@
       "inhibitWhenAudio": true,
       "timeouts": [
         {
-          "timeout": 540,
-          "idleAction": "~/.config/caelestia/cli/scripts/hotkey.sh idle notify off",
-          "returnAction": "~/.config/caelestia/cli/scripts/hotkey.sh idle notify on"
-        },
-        {
           "timeout": 600,
-          "idleAction": "~/.config/caelestia/cli/scripts/hotkey.sh idle lock"
+          "idleAction": "lock"
         },
         {
           "timeout": 720,
-          "idleAction": "~/.config/caelestia/cli/scripts/hotkey.sh idle lock",
-          "returnAction": "~/.config/caelestia/cli/scripts/hotkey.sh idle display on"
+          "idleAction": "dpms off",
+          "returnAction": "dpms on"
         },
         {
           "timeout": 1200,
-          "idleAction": "~/.config/caelestia/cli/scripts/hotkey.sh idle sleep"
+          "idleAction": [
+            "systemctl",
+            "suspend-then-hibernate"
+          ]
         }
       ]
     }
@@ -165,7 +163,7 @@
       "showBattery": true,
       "showBluetooth": true,
       "showKbLayout": true,
-      "showMicrophone": true,
+      "showMicrophone": false,
       "showNetwork": true,
       "showLockStatus": false
     },

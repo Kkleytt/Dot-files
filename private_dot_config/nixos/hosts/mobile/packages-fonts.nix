@@ -143,7 +143,7 @@
   };
 
   # Extra Portal Configuration
-  xdg.portal = {
+  xdg.portal = {zen
     enable = true;
     wlr.enable = true;
     config.common.default = [ "gtk" ];
